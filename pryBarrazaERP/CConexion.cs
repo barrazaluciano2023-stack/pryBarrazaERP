@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.OleDb;
+using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.OleDb;
-using System.IO;
 
 namespace pryBarrazaERP
 {
@@ -20,6 +21,9 @@ namespace pryBarrazaERP
                 conectorBaseDatos = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\..\DATABASE\Barraza.accdb;Persist Security Info=False;");
                 conectorBaseDatos.Open();
                 estadoConexion = conectorBaseDatos.State.ToString();
+                
+
+
             }
             catch (Exception error)
             {
