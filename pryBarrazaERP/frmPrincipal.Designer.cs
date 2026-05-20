@@ -28,43 +28,55 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.sstConexion = new System.Windows.Forms.StatusStrip();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.components = new System.ComponentModel.Container();
+            this.lblHora = new System.Windows.Forms.Label();
+            this.lblBienvenido = new System.Windows.Forms.Label();
+            this.timer = new System.Windows.Forms.Timer(this.components);
+            this.lblFecha = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // sstConexion
+            // lblHora
             // 
-            this.sstConexion.Location = new System.Drawing.Point(0, 428);
-            this.sstConexion.Name = "sstConexion";
-            this.sstConexion.Size = new System.Drawing.Size(800, 22);
-            this.sstConexion.TabIndex = 2;
-            this.sstConexion.Text = "statusStrip1";
+            this.lblHora.AutoSize = true;
+            this.lblHora.Location = new System.Drawing.Point(12, 9);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(10, 13);
+            this.lblHora.TabIndex = 3;
+            this.lblHora.Text = ".";
             // 
-            // label1
+            // lblBienvenido
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(297, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Mostrar Rol y perfil";
+            this.lblBienvenido.AutoSize = true;
+            this.lblBienvenido.Font = new System.Drawing.Font("MV Boli", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBienvenido.Location = new System.Drawing.Point(314, 9);
+            this.lblBienvenido.Name = "lblBienvenido";
+            this.lblBienvenido.Size = new System.Drawing.Size(138, 31);
+            this.lblBienvenido.TabIndex = 6;
+            this.lblBienvenido.Text = "Bienvenido:";
             // 
-            // dateTimePicker1
+            // timer
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(464, 12);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 5;
+            this.timer.Enabled = true;
+            this.timer.Interval = 1000;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
+            // lblFecha
+            // 
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Location = new System.Drawing.Point(638, 9);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(10, 13);
+            this.lblFecha.TabIndex = 7;
+            this.lblFecha.Text = ".";
             // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.sstConexion);
+            this.Controls.Add(this.lblFecha);
+            this.Controls.Add(this.lblBienvenido);
+            this.Controls.Add(this.lblHora);
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "principal";
@@ -75,8 +87,9 @@
         }
 
         #endregion
-        private System.Windows.Forms.StatusStrip sstConexion;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label lblHora;
+        private System.Windows.Forms.Label lblBienvenido;
+        private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.Label lblFecha;
     }
 }

@@ -13,9 +13,12 @@ namespace pryBarrazaERP
 {
     public partial class frmPrincipal : Form
     {
-        public frmPrincipal()
+        string usuario;
+        public frmPrincipal(string nombreUsuario)
         {
             InitializeComponent();
+            usuario = nombreUsuario;
+            lblBienvenido.Text = "Bienvenido, " + usuario;
         }
 
         private void btnProbar_Click(object sender, EventArgs e)
@@ -26,25 +29,17 @@ namespace pryBarrazaERP
 
         private void principal_Load(object sender, EventArgs e)
         {
-            CConexion objetoConeccionBaseDatos = new CConexion();
-            objetoConeccionBaseDatos.ConectarBaseDatos();
-            if (objetoConeccionBaseDatos != null)
-            {
-                //sstConexion.Text = objetoConeccionBaseDatos.estadoConexion;
-                //lblConexion.Text = objetoConeccionBaseDatos.estadoConexion;
-                //lblConexion.ForeColor = System.Drawing.Color.Green;
-                //lblConexion.Text = "Estado Conexion: Conexion Exitosa";
-            }
-            else
-            {
-                //lblConexion.ForeColor = System.Drawing.Color.Red;
-                //lblConexion.Text = "Estado Conexion: Conexion Fallida";
-            }
+            lblFecha.Text = DateTime.Now.ToLongDateString();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            lblHora.Text = DateTime.Now.ToLongTimeString();
         }
     }
 }

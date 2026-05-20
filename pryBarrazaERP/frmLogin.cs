@@ -11,6 +11,7 @@ using System.Windows.Forms;
 namespace pryBarrazaERP
 {
     public partial class frmLogin : Form
+
     {
         public frmLogin()
         {
@@ -19,37 +20,46 @@ namespace pryBarrazaERP
         int intentos = 0;
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            while (intentos < 3)
+            CConexion conexion = new CConexion();
+
+            if (txtUsuario.Text == "" || txtContraseña.Text == "")
             {
-                if (txtUsuario.Text == "admin" && txtContraseña.Text == "admin" && txtUsuario.Text != "" && txtContraseña.Text != "")
+                MessageBox.Show("Por favor, complete ambos campos.");
+                txtUsuario.Focus();
+                return;
+            }
+            bool acceso = conexion.login(txtUsuario.Text, txtContraseña.Text);
+            if (acceso == true)
+            {
+
+                frmPrincipal principal = new frmPrincipal(txtUsuario.Text);
+                principal.Show();
+
+                this.Hide();//Cierra el formulario de login pero no la aplicación
+            }
+            else
+            {
+                intentos++;
+
+                MessageBox.Show("Datos incorrectos ");
+
+                txtUsuario.Clear();
+                txtContraseña.Clear();
+                txtUsuario.Focus();
+
+                if (intentos >= 3)
                 {
-                    MessageBox.Show("Bienvenido al sistema");
-                    frmPrincipal principal = new frmPrincipal();
-                    principal.Show();
-                    this.Hide();
-                    break;
-                }
-                else
-                {
-                    if (txtUsuario.Text == "" || txtContraseña.Text == "")
-                    {
-                        MessageBox.Show("Por favor, complete ambos campos.");
-                        txtUsuario.Focus();
-                        break;
-                    }
-                    intentos++;
-                    MessageBox.Show("Usuario o contraseña incorrectos. Intento " + intentos + " de 3.");
-                    txtUsuario.Clear();
-                    txtContraseña.Clear();
-                    txtUsuario.Focus();
-                    break;
+                    MessageBox.Show("Excediste el numero de intentos");
+                    Application.Exit();
                 }
             }
-            if (intentos > 3)
-            {
-                MessageBox.Show("Has excedido el número de intentos. El programa se cerrará.");
-                Application.Exit();
-            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
+
+
