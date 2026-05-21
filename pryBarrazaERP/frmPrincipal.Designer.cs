@@ -35,8 +35,8 @@
             this.lblFecha = new System.Windows.Forms.Label();
             this.btmAgregarUsuario = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,15 +97,6 @@
             this.groupBox1.Text = "Acciones Permitidas:";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter_1);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(25, 75);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(173, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Registrar Perfiles";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(25, 122);
@@ -114,6 +105,16 @@
             this.button2.TabIndex = 10;
             this.button2.Text = "Registrar Contactos:";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(25, 75);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(173, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Registrar Perfiles";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // frmPrincipal
             // 

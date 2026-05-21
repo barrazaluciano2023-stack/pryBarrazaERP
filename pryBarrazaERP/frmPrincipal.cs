@@ -52,6 +52,12 @@ namespace pryBarrazaERP
             frmUsuario frmUsuario = new frmUsuario();
             frmUsuario.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            frmContacto frmContacto = new frmContacto();
+            frmContacto.ShowDialog();
+        }
     }
 }
 
