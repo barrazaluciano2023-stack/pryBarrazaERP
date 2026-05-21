@@ -41,6 +41,17 @@ namespace pryBarrazaERP
         {
             lblHora.Text = DateTime.Now.ToLongTimeString();
         }
+
+        private void groupBox1_Enter_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btmAgregarUsuario_Click(object sender, EventArgs e)
+        {
+            frmUsuario frmUsuario = new frmUsuario();
+            frmUsuario.ShowDialog();
+        }
     }
 }
 
