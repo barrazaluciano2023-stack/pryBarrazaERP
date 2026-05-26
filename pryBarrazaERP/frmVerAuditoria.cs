@@ -10,16 +10,17 @@ using System.Windows.Forms;
 
 namespace pryBarrazaERP
 {
-    public partial class frmContacto : Form
+    public partial class frmVerAuditoria : Form
     {
-        public frmContacto()
+        public frmVerAuditoria()
         {
             InitializeComponent();
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void frmVerAuditoria_Load(object sender, EventArgs e)
         {
-
+            clsAuditoria clsAuditoria = new clsAuditoria();
+            clsAuditoria.CargarIngresos(dtvIngresos);
         }
     }
 }

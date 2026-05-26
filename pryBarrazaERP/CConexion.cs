@@ -50,6 +50,7 @@ namespace pryBarrazaERP
 
                 if (lector.Read())//Si existe → devuelve true, si no existe → devuelve false
                 {
+
                     return true;
                 }
                 else
@@ -68,6 +69,9 @@ namespace pryBarrazaERP
                     conectorBaseDatos.Close();
                 }
             }
+        }
+        public void Grabar()
+        {
         }
     }
 }

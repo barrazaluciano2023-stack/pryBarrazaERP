@@ -21,6 +21,7 @@ namespace pryBarrazaERP
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             CConexion conexion = new CConexion();
+            clsAuditoria grabarUsuario = new clsAuditoria();
 
             if (txtUsuario.Text == "" || txtContraseña.Text == "")
             {
@@ -29,10 +30,12 @@ namespace pryBarrazaERP
                 return;
             }
             bool acceso = conexion.login(txtUsuario.Text, txtContraseña.Text);
+            DateTime fechaYHora = DateTime.Now;
+            grabarUsuario.GrabarDatos(txtUsuario.Text, txtContraseña.Text, fechaYHora.ToString(), intentos.ToString());
             if (acceso == true)
             {
 
-                frmPrincipal principal = new frmPrincipal(txtUsuario.Text);
+                frmPrincipalADM principal = new frmPrincipalADM(txtUsuario.Text);
                 principal.Show();
 
                 this.Hide();//Cierra el formulario de login pero no la aplicación
@@ -55,6 +58,7 @@ namespace pryBarrazaERP
             }
         }
 
+        
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();

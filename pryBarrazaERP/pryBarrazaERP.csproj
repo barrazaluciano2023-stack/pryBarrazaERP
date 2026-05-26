@@ -57,53 +57,45 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsAuditoria.cs" />
     <Compile Include="CConexion.cs" />
-    <Compile Include="frmContacto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmContacto.Designer.cs">
-      <DependentUpon>frmContacto.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPersonal.cs">
+    <Compile Include="frmRegistrarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPersonal.Designer.cs">
-      <DependentUpon>frmPersonal.cs</DependentUpon>
+    <Compile Include="frmRegistrarUsuario.Designer.cs">
+      <DependentUpon>frmRegistrarUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPrincipal.cs">
+    <Compile Include="frmPrincipalADM.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPrincipal.Designer.cs">
-      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    <Compile Include="frmPrincipalADM.Designer.cs">
+      <DependentUpon>frmPrincipalADM.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmUsuario.cs">
+    <Compile Include="frmVerAuditoria.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmUsuario.Designer.cs">
-      <DependentUpon>frmUsuario.cs</DependentUpon>
+    <Compile Include="frmVerAuditoria.Designer.cs">
+      <DependentUpon>frmVerAuditoria.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmContacto.resx">
-      <DependentUpon>frmContacto.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPersonal.resx">
-      <DependentUpon>frmPersonal.cs</DependentUpon>
+    <EmbeddedResource Include="frmRegistrarUsuario.resx">
+      <DependentUpon>frmRegistrarUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPrincipal.resx">
-      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    <EmbeddedResource Include="frmPrincipalADM.resx">
+      <DependentUpon>frmPrincipalADM.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmUsuario.resx">
-      <DependentUpon>frmUsuario.cs</DependentUpon>
+    <EmbeddedResource Include="frmVerAuditoria.resx">
+      <DependentUpon>frmVerAuditoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

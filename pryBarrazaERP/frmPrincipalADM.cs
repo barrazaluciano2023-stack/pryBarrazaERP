@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace pryBarrazaERP
 {
-    public partial class frmPrincipal : Form
+    public partial class frmPrincipalADM : Form
     {
         string usuario;
-        public frmPrincipal(string nombreUsuario)
+        public frmPrincipalADM(string nombreUsuario)
         {
             InitializeComponent();
             usuario = nombreUsuario;
@@ -49,14 +49,20 @@ namespace pryBarrazaERP
 
         private void btmAgregarUsuario_Click(object sender, EventArgs e)
         {
-            frmUsuario frmUsuario = new frmUsuario();
-            frmUsuario.ShowDialog();
+            frmRegistrarUsuario frmRegistrarUsuario = new frmRegistrarUsuario();
+            frmRegistrarUsuario.ShowDialog();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+
+        private void btnVerAuditoria_Click(object sender, EventArgs e)
         {
-            frmContacto frmContacto = new frmContacto();
-            frmContacto.ShowDialog();
+            frmVerAuditoria frmVerAuditoria = new frmVerAuditoria();
+            frmVerAuditoria.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

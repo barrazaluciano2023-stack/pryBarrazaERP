@@ -11,12 +11,12 @@ using Microsoft.Web.WebView2.WinForms;
 
 namespace pryBarrazaERP
 {
-    public partial class frmPersonal : Form
+    public partial class frmRegistrarUsuario : Form
     {
         public string Latitud { get; set; }
         public string Longitud { get; set; }
 
-        public frmPersonal()
+        public frmRegistrarUsuario()
         {
             InitializeComponent();
             InicializarMapa();
@@ -124,6 +124,11 @@ namespace pryBarrazaERP
         }
 
         private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }

@@ -48,12 +48,12 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnAceptar);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(223, 154);
+            this.groupBox1.Location = new System.Drawing.Point(223, 138);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(336, 200);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Ingrese sus datos";
+            this.groupBox1.Text = "Iniciar Sesion";
             // 
             // btnCancelar
             // 
