@@ -70,6 +70,7 @@
             this.txtContraseña.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtContraseña.Location = new System.Drawing.Point(133, 76);
             this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.PasswordChar = '*';
             this.txtContraseña.Size = new System.Drawing.Size(183, 20);
             this.txtContraseña.TabIndex = 7;
             // 

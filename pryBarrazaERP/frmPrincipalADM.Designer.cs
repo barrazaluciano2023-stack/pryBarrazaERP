@@ -34,9 +34,11 @@
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.lblFecha = new System.Windows.Forms.Label();
             this.btmAgregarUsuario = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnVerAuditoria = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnEditUsuario = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblHora
@@ -51,10 +53,10 @@
             // lblBienvenido
             // 
             this.lblBienvenido.AutoSize = true;
-            this.lblBienvenido.Font = new System.Drawing.Font("MV Boli", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBienvenido.Location = new System.Drawing.Point(314, 9);
+            this.lblBienvenido.Font = new System.Drawing.Font("Cambria", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBienvenido.Location = new System.Drawing.Point(279, 9);
             this.lblBienvenido.Name = "lblBienvenido";
-            this.lblBienvenido.Size = new System.Drawing.Size(138, 31);
+            this.lblBienvenido.Size = new System.Drawing.Size(159, 32);
             this.lblBienvenido.TabIndex = 6;
             this.lblBienvenido.Text = "Bienvenido:";
             // 
@@ -75,7 +77,7 @@
             // 
             // btmAgregarUsuario
             // 
-            this.btmAgregarUsuario.Location = new System.Drawing.Point(25, 33);
+            this.btmAgregarUsuario.Location = new System.Drawing.Point(26, 18);
             this.btmAgregarUsuario.Name = "btmAgregarUsuario";
             this.btmAgregarUsuario.Size = new System.Drawing.Size(173, 23);
             this.btmAgregarUsuario.TabIndex = 8;
@@ -83,21 +85,9 @@
             this.btmAgregarUsuario.UseVisualStyleBackColor = true;
             this.btmAgregarUsuario.Click += new System.EventHandler(this.btmAgregarUsuario_Click);
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.btnVerAuditoria);
-            this.groupBox1.Controls.Add(this.btmAgregarUsuario);
-            this.groupBox1.Location = new System.Drawing.Point(34, 122);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(312, 233);
-            this.groupBox1.TabIndex = 9;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Acciones Permitidas:";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter_1);
-            // 
             // btnVerAuditoria
             // 
-            this.btnVerAuditoria.Location = new System.Drawing.Point(25, 83);
+            this.btnVerAuditoria.Location = new System.Drawing.Point(26, 67);
             this.btnVerAuditoria.Name = "btnVerAuditoria";
             this.btnVerAuditoria.Size = new System.Drawing.Size(173, 23);
             this.btnVerAuditoria.TabIndex = 11;
@@ -105,12 +95,42 @@
             this.btnVerAuditoria.UseVisualStyleBackColor = true;
             this.btnVerAuditoria.Click += new System.EventHandler(this.btnVerAuditoria_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(26, 176);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(173, 23);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Cerrar Sesión";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.btnEditUsuario);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnVerAuditoria);
+            this.panel1.Controls.Add(this.btmAgregarUsuario);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(238, 448);
+            this.panel1.TabIndex = 11;
+            // 
+            // btnEditUsuario
+            // 
+            this.btnEditUsuario.Location = new System.Drawing.Point(26, 120);
+            this.btnEditUsuario.Name = "btnEditUsuario";
+            this.btnEditUsuario.Size = new System.Drawing.Size(173, 23);
+            this.btnEditUsuario.TabIndex = 12;
+            this.btnEditUsuario.Text = "Editar Usuario";
+            this.btnEditUsuario.UseVisualStyleBackColor = true;
+            // 
             // frmPrincipalADM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.lblBienvenido);
             this.Controls.Add(this.lblHora);
@@ -118,7 +138,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "principal";
             this.Load += new System.EventHandler(this.principal_Load);
-            this.groupBox1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -130,7 +150,9 @@
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Button btmAgregarUsuario;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnVerAuditoria;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnEditUsuario;
     }
 }

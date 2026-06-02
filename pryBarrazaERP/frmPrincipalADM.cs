@@ -18,7 +18,7 @@ namespace pryBarrazaERP
         {
             InitializeComponent();
             usuario = nombreUsuario;
-            lblBienvenido.Text = "Bienvenido, " + usuario;
+            lblBienvenido.Text = "Bienvenido:  " + usuario;
         }
 
         private void btnProbar_Click(object sender, EventArgs e)

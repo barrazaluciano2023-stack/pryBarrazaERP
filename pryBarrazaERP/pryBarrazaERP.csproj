@@ -59,11 +59,29 @@
   <ItemGroup>
     <Compile Include="clsAuditoria.cs" />
     <Compile Include="CConexion.cs" />
+    <Compile Include="frmInfoExtra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInfoExtra.Designer.cs">
+      <DependentUpon>frmInfoExtra.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrincipalRRHH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrincipalRRHH.Designer.cs">
+      <DependentUpon>frmPrincipalRRHH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrincipalUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrincipalUsuario.Designer.cs">
+      <DependentUpon>frmPrincipalUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="frmRegistrarUsuario.cs">
       <SubType>Form</SubType>
@@ -85,8 +103,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmInfoExtra.resx">
+      <DependentUpon>frmInfoExtra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrincipalRRHH.resx">
+      <DependentUpon>frmPrincipalRRHH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrincipalUsuario.resx">
+      <DependentUpon>frmPrincipalUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRegistrarUsuario.resx">
       <DependentUpon>frmRegistrarUsuario.cs</DependentUpon>
