@@ -63,6 +63,16 @@ namespace pryBarrazaERP.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap minimalist_building_logo_in_flat_style_png {
+            get {
+                object obj = ResourceManager.GetObject("minimalist-building-logo-in-flat-style-png", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap png_transparent_corporation_free_content_corporate_s_angle_building_text {
             get {
                 object obj = ResourceManager.GetObject("png-transparent-corporation-free-content-corporate-s-angle-building-text", resourceCulture);

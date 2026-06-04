@@ -37,9 +37,11 @@
             this.btnVerAuditoria = new System.Windows.Forms.Button();
             this.btnCerrasSesion = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnEditUsuario = new System.Windows.Forms.Button();
             this.btnEditarPerfilUsuario = new System.Windows.Forms.Button();
+            this.btnEditUsuario = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblHora
@@ -78,7 +80,7 @@
             // 
             // btmAgregarUsuario
             // 
-            this.btmAgregarUsuario.Location = new System.Drawing.Point(26, 18);
+            this.btmAgregarUsuario.Location = new System.Drawing.Point(26, 222);
             this.btmAgregarUsuario.Name = "btmAgregarUsuario";
             this.btmAgregarUsuario.Size = new System.Drawing.Size(173, 23);
             this.btmAgregarUsuario.TabIndex = 8;
@@ -88,7 +90,7 @@
             // 
             // btnVerAuditoria
             // 
-            this.btnVerAuditoria.Location = new System.Drawing.Point(26, 67);
+            this.btnVerAuditoria.Location = new System.Drawing.Point(26, 271);
             this.btnVerAuditoria.Name = "btnVerAuditoria";
             this.btnVerAuditoria.Size = new System.Drawing.Size(173, 23);
             this.btnVerAuditoria.TabIndex = 11;
@@ -109,6 +111,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.btnEditarPerfilUsuario);
             this.panel1.Controls.Add(this.btnEditUsuario);
             this.panel1.Controls.Add(this.btnCerrasSesion);
@@ -119,24 +122,34 @@
             this.panel1.Size = new System.Drawing.Size(238, 448);
             this.panel1.TabIndex = 11;
             // 
-            // btnEditUsuario
-            // 
-            this.btnEditUsuario.Location = new System.Drawing.Point(26, 120);
-            this.btnEditUsuario.Name = "btnEditUsuario";
-            this.btnEditUsuario.Size = new System.Drawing.Size(173, 23);
-            this.btnEditUsuario.TabIndex = 12;
-            this.btnEditUsuario.Text = "Editar Usuario";
-            this.btnEditUsuario.UseVisualStyleBackColor = true;
-            // 
             // btnEditarPerfilUsuario
             // 
-            this.btnEditarPerfilUsuario.Location = new System.Drawing.Point(26, 168);
+            this.btnEditarPerfilUsuario.Location = new System.Drawing.Point(26, 372);
             this.btnEditarPerfilUsuario.Name = "btnEditarPerfilUsuario";
             this.btnEditarPerfilUsuario.Size = new System.Drawing.Size(173, 23);
             this.btnEditarPerfilUsuario.TabIndex = 13;
             this.btnEditarPerfilUsuario.Text = "Editar Perfil de usuario";
             this.btnEditarPerfilUsuario.UseVisualStyleBackColor = true;
             this.btnEditarPerfilUsuario.Click += new System.EventHandler(this.btnEditarPerfilUsuario_Click);
+            // 
+            // btnEditUsuario
+            // 
+            this.btnEditUsuario.Location = new System.Drawing.Point(26, 324);
+            this.btnEditUsuario.Name = "btnEditUsuario";
+            this.btnEditUsuario.Size = new System.Drawing.Size(173, 23);
+            this.btnEditUsuario.TabIndex = 12;
+            this.btnEditUsuario.Text = "Editar Usuario";
+            this.btnEditUsuario.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::pryBarrazaERP.Properties.Resources.minimalist_building_logo_in_flat_style_png;
+            this.pictureBox1.Location = new System.Drawing.Point(15, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(200, 179);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
             // 
             // frmPrincipalADM
             // 
@@ -152,6 +165,7 @@
             this.Text = "principal";
             this.Load += new System.EventHandler(this.principal_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,5 +182,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnEditUsuario;
         private System.Windows.Forms.Button btnEditarPerfilUsuario;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

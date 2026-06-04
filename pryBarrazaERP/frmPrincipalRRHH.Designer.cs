@@ -33,12 +33,15 @@
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.btmAgregarUsuario = new System.Windows.Forms.Button();
             this.lblBienvenido = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.btnEditUsuario);
             this.panel1.Controls.Add(this.btnCerrarSesion);
             this.panel1.Controls.Add(this.btmAgregarUsuario);
@@ -49,7 +52,7 @@
             // 
             // btnEditUsuario
             // 
-            this.btnEditUsuario.Location = new System.Drawing.Point(26, 66);
+            this.btnEditUsuario.Location = new System.Drawing.Point(24, 291);
             this.btnEditUsuario.Name = "btnEditUsuario";
             this.btnEditUsuario.Size = new System.Drawing.Size(173, 23);
             this.btnEditUsuario.TabIndex = 12;
@@ -58,7 +61,7 @@
             // 
             // btnCerrarSesion
             // 
-            this.btnCerrarSesion.Location = new System.Drawing.Point(26, 119);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(24, 344);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Size = new System.Drawing.Size(173, 23);
             this.btnCerrarSesion.TabIndex = 10;
@@ -68,7 +71,7 @@
             // 
             // btmAgregarUsuario
             // 
-            this.btmAgregarUsuario.Location = new System.Drawing.Point(26, 18);
+            this.btmAgregarUsuario.Location = new System.Drawing.Point(24, 243);
             this.btmAgregarUsuario.Name = "btmAgregarUsuario";
             this.btmAgregarUsuario.Size = new System.Drawing.Size(173, 23);
             this.btmAgregarUsuario.TabIndex = 8;
@@ -85,6 +88,16 @@
             this.lblBienvenido.TabIndex = 12;
             this.lblBienvenido.Text = "Bienvenido:";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::pryBarrazaERP.Properties.Resources.minimalist_building_logo_in_flat_style_png;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(203, 212);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmPrincipalRRHH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -95,6 +108,7 @@
             this.Name = "frmPrincipalRRHH";
             this.Text = "frmPrincipalRRHH";
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -107,5 +121,6 @@
         private System.Windows.Forms.Button btnCerrarSesion;
         private System.Windows.Forms.Button btmAgregarUsuario;
         private System.Windows.Forms.Label lblBienvenido;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

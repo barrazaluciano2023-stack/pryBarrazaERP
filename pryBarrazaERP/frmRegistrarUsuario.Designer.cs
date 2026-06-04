@@ -26,7 +26,7 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        private void InitializeComponent()              
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -35,13 +35,11 @@
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.wbvGeo = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.cmbProvincia = new System.Windows.Forms.ComboBox();
             this.cmbLocalidad = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtDireccion = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtUsuarioRedSocial = new System.Windows.Forms.TextBox();
@@ -65,7 +63,6 @@
             this.btnInfoExtra = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.wbvGeo)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
@@ -120,33 +117,19 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.wbvGeo);
             this.groupBox1.Controls.Add(this.cmbProvincia);
             this.groupBox1.Controls.Add(this.cmbLocalidad);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtDireccion);
-            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Location = new System.Drawing.Point(57, 217);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(675, 268);
+            this.groupBox1.Size = new System.Drawing.Size(331, 268);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Domicilio:";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
-            // 
-            // wbvGeo
-            // 
-            this.wbvGeo.AllowExternalDrop = true;
-            this.wbvGeo.CreationProperties = null;
-            this.wbvGeo.DefaultBackgroundColor = System.Drawing.Color.White;
-            this.wbvGeo.Location = new System.Drawing.Point(283, 18);
-            this.wbvGeo.Name = "wbvGeo";
-            this.wbvGeo.Size = new System.Drawing.Size(377, 244);
-            this.wbvGeo.TabIndex = 12;
-            this.wbvGeo.ZoomFactor = 1D;
-            this.wbvGeo.Click += new System.EventHandler(this.webView21_Click);
             // 
             // cmbProvincia
             // 
@@ -215,15 +198,6 @@
             this.txtDireccion.Size = new System.Drawing.Size(130, 20);
             this.txtDireccion.TabIndex = 7;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(248, 25);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(33, 13);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "GEO:";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -245,7 +219,7 @@
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Location = new System.Drawing.Point(414, 6);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(318, 170);
+            this.groupBox2.Size = new System.Drawing.Size(318, 205);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Contacto:";
@@ -322,7 +296,7 @@
             // chbActivo
             // 
             this.chbActivo.AutoSize = true;
-            this.chbActivo.Location = new System.Drawing.Point(637, 194);
+            this.chbActivo.Location = new System.Drawing.Point(622, 235);
             this.chbActivo.Name = "chbActivo";
             this.chbActivo.Size = new System.Drawing.Size(95, 17);
             this.chbActivo.TabIndex = 2;
@@ -405,7 +379,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(538, 491);
+            this.btnCancelar.Location = new System.Drawing.Point(553, 462);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 16;
@@ -415,7 +389,7 @@
             // 
             // btnCrearUsuario
             // 
-            this.btnCrearUsuario.Location = new System.Drawing.Point(647, 491);
+            this.btnCrearUsuario.Location = new System.Drawing.Point(642, 462);
             this.btnCrearUsuario.Name = "btnCrearUsuario";
             this.btnCrearUsuario.Size = new System.Drawing.Size(75, 23);
             this.btnCrearUsuario.TabIndex = 15;
@@ -425,7 +399,7 @@
             // 
             // btnInfoExtra
             // 
-            this.btnInfoExtra.Location = new System.Drawing.Point(269, 491);
+            this.btnInfoExtra.Location = new System.Drawing.Point(634, 272);
             this.btnInfoExtra.Name = "btnInfoExtra";
             this.btnInfoExtra.Size = new System.Drawing.Size(83, 23);
             this.btnInfoExtra.TabIndex = 17;
@@ -436,7 +410,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(54, 496);
+            this.label15.Location = new System.Drawing.Point(419, 277);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(209, 13);
             this.label15.TabIndex = 22;
@@ -461,7 +435,6 @@
             this.Load += new System.EventHandler(this.frmPersonal_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.wbvGeo)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -485,9 +458,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtDireccion;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private Microsoft.Web.WebView2.WinForms.WebView2 wbvGeo;
+        // WebView2 eliminado
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.CheckBox chbActivo;
         private System.Windows.Forms.TextBox txtTelefono;

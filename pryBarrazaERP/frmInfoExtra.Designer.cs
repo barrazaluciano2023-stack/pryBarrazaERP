@@ -37,7 +37,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.wbvGeo = new Microsoft.Web.WebView2.WinForms.WebView2();
+            //this.wbvGeo = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -57,7 +57,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.wbvGeo)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.wbvGeo)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -80,7 +80,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.wbvGeo);
+            //this.groupBox1.Controls.Add(this.wbvGeo);
             this.groupBox1.Controls.Add(this.comboBox2);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.label7);
@@ -156,14 +156,14 @@
             // 
             // wbvGeo
             // 
-            this.wbvGeo.AllowExternalDrop = true;
-            this.wbvGeo.CreationProperties = null;
-            this.wbvGeo.DefaultBackgroundColor = System.Drawing.Color.White;
-            this.wbvGeo.Location = new System.Drawing.Point(283, 18);
-            this.wbvGeo.Name = "wbvGeo";
-            this.wbvGeo.Size = new System.Drawing.Size(377, 244);
-            this.wbvGeo.TabIndex = 12;
-            this.wbvGeo.ZoomFactor = 1D;
+            //this.wbvGeo.AllowExternalDrop = true;
+            //this.wbvGeo.CreationProperties = null;
+            //this.wbvGeo.DefaultBackgroundColor = System.Drawing.Color.White;
+            //this.wbvGeo.Location = new System.Drawing.Point(283, 18);
+            //this.wbvGeo.Name = "wbvGeo";
+            //this.wbvGeo.Size = new System.Drawing.Size(377, 244);
+            //this.wbvGeo.TabIndex = 12;
+            //this.wbvGeo.ZoomFactor = 1D;
             // 
             // button4
             // 
@@ -337,7 +337,7 @@
             this.tabPage2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.wbvGeo)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.wbvGeo)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -354,7 +354,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-        private Microsoft.Web.WebView2.WinForms.WebView2 wbvGeo;
+        //private Microsoft.Web.WebView2.WinForms.WebView2 wbvGeo;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label7;

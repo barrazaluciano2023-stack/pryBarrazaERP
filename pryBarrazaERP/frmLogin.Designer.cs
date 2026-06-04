@@ -46,7 +46,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnAceptar);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(223, 138);
+            this.groupBox1.Location = new System.Drawing.Point(387, 105);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(336, 200);
             this.groupBox1.TabIndex = 7;
@@ -125,15 +125,16 @@
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.Location = new System.Drawing.Point(-2, -2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(804, 97);
+            this.panel1.Size = new System.Drawing.Size(312, 410);
             this.panel1.TabIndex = 8;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::pryBarrazaERP.Properties.Resources.png_transparent_corporation_free_content_corporate_s_angle_building_text1;
-            this.pictureBox1.Location = new System.Drawing.Point(358, 29);
+            this.pictureBox1.Image = global::pryBarrazaERP.Properties.Resources.minimalist_building_logo_in_flat_style_png;
+            this.pictureBox1.Location = new System.Drawing.Point(51, 95);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(129, 51);
+            this.pictureBox1.Size = new System.Drawing.Size(203, 212);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 

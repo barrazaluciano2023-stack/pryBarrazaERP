@@ -32,12 +32,15 @@
             this.btnEditUsuario = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.lblBienvenido = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.btnEditUsuario);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Location = new System.Drawing.Point(1, 0);
@@ -47,7 +50,7 @@
             // 
             // btnEditUsuario
             // 
-            this.btnEditUsuario.Location = new System.Drawing.Point(26, 19);
+            this.btnEditUsuario.Location = new System.Drawing.Point(22, 336);
             this.btnEditUsuario.Name = "btnEditUsuario";
             this.btnEditUsuario.Size = new System.Drawing.Size(173, 23);
             this.btnEditUsuario.TabIndex = 12;
@@ -56,7 +59,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(26, 73);
+            this.button1.Location = new System.Drawing.Point(22, 390);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(173, 23);
             this.button1.TabIndex = 10;
@@ -74,6 +77,16 @@
             this.lblBienvenido.TabIndex = 12;
             this.lblBienvenido.Text = "Bienvenido:";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::pryBarrazaERP.Properties.Resources.minimalist_building_logo_in_flat_style_png;
+            this.pictureBox1.Location = new System.Drawing.Point(11, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(203, 212);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmPrincipalUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -84,6 +97,7 @@
             this.Name = "frmPrincipalUsuario";
             this.Text = "frmPrincipalUsuario";
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -95,5 +109,6 @@
         private System.Windows.Forms.Button btnEditUsuario;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblBienvenido;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
