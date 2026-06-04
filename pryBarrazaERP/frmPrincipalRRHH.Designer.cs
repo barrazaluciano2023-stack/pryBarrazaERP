@@ -30,7 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnEditUsuario = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.btmAgregarUsuario = new System.Windows.Forms.Button();
             this.lblBienvenido = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -40,7 +40,7 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.Controls.Add(this.btnEditUsuario);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnCerrarSesion);
             this.panel1.Controls.Add(this.btmAgregarUsuario);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -56,14 +56,15 @@
             this.btnEditUsuario.Text = "Editar Usuario";
             this.btnEditUsuario.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnCerrarSesion
             // 
-            this.button1.Location = new System.Drawing.Point(26, 119);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(173, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Cerrar Sesión";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCerrarSesion.Location = new System.Drawing.Point(26, 119);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Size = new System.Drawing.Size(173, 23);
+            this.btnCerrarSesion.TabIndex = 10;
+            this.btnCerrarSesion.Text = "Cerrar Sesión";
+            this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.button1_Click);
             // 
             // btmAgregarUsuario
             // 
@@ -103,7 +104,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnEditUsuario;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCerrarSesion;
         private System.Windows.Forms.Button btmAgregarUsuario;
         private System.Windows.Forms.Label lblBienvenido;
     }

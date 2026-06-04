@@ -64,6 +64,13 @@ namespace pryBarrazaERP
         {
 
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+            MessageBox.Show("Sesion Cerrada,adios");
+            Environment.Exit(0);
+        }
     }
 }
 

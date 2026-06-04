@@ -18,6 +18,7 @@ namespace pryBarrazaERP
             InitializeComponent();
         }
         int intentos = 0;
+        
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             CConexion conexion = new CConexion();
@@ -62,6 +63,23 @@ namespace pryBarrazaERP
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void chbVerContraseña_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chbVerContraseña.Checked)
+            {
+                txtContraseña.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txtContraseña.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            txtContraseña.UseSystemPasswordChar = true;
         }
     }
 }

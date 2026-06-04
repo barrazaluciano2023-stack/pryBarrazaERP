@@ -35,7 +35,7 @@
             this.lblFecha = new System.Windows.Forms.Label();
             this.btmAgregarUsuario = new System.Windows.Forms.Button();
             this.btnVerAuditoria = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCerrasSesion = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnEditUsuario = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -95,20 +95,21 @@
             this.btnVerAuditoria.UseVisualStyleBackColor = true;
             this.btnVerAuditoria.Click += new System.EventHandler(this.btnVerAuditoria_Click);
             // 
-            // button1
+            // btnCerrasSesion
             // 
-            this.button1.Location = new System.Drawing.Point(26, 176);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(173, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Cerrar Sesión";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCerrasSesion.Location = new System.Drawing.Point(26, 176);
+            this.btnCerrasSesion.Name = "btnCerrasSesion";
+            this.btnCerrasSesion.Size = new System.Drawing.Size(173, 23);
+            this.btnCerrasSesion.TabIndex = 10;
+            this.btnCerrasSesion.Text = "Cerrar Sesión";
+            this.btnCerrasSesion.UseVisualStyleBackColor = true;
+            this.btnCerrasSesion.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.Controls.Add(this.btnEditUsuario);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnCerrasSesion);
             this.panel1.Controls.Add(this.btnVerAuditoria);
             this.panel1.Controls.Add(this.btmAgregarUsuario);
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -151,7 +152,7 @@
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Button btmAgregarUsuario;
         private System.Windows.Forms.Button btnVerAuditoria;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCerrasSesion;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnEditUsuario;
     }

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace pryBarrazaERP
 {
@@ -70,8 +71,68 @@ namespace pryBarrazaERP
                 }
             }
         }
-        public void Grabar()
+        public void RegistrarUsuario(
+         string nombre,
+         string apellido,
+         string dni,
+         string usuario,
+         string contrasena,
+         string perfil,
+         //string mail,
+         //string telefono,
+         //string redSocial,
+         //string usuarioRedSocial,
+         //string direccion,
+         //string provincia,
+         //string localidad,
+         bool activo)
         {
+            try
+            {
+                ConectarBaseDatos();
+
+                string consulta = @"INSERT INTO Usuario
+        (
+            Nombre,
+            Apellido,
+            DNI,
+            Usuario,
+            Contrasena,
+            Perfil,
+            Activo
+        )
+        VALUES
+        (
+            ?,?,?,?,?,?,?
+        )";
+
+                OleDbCommand cmd = new OleDbCommand(consulta, conectorBaseDatos);
+
+                cmd.Parameters.AddWithValue("@Nombre", nombre);
+                cmd.Parameters.AddWithValue("@Apellido", apellido);
+                cmd.Parameters.AddWithValue("@DNI", dni);
+                cmd.Parameters.AddWithValue("@Usuario", usuario);
+                cmd.Parameters.AddWithValue("@Contrasena", contrasena);
+                cmd.Parameters.AddWithValue("@Perfil", perfil);
+                //cmd.Parameters.AddWithValue("@Mail", mail);
+                //cmd.Parameters.AddWithValue("@Telefono", telefono);
+                //cmd.Parameters.AddWithValue("@RedSocial", redSocial);
+                //cmd.Parameters.AddWithValue("@UsuarioRedSocial", usuarioRedSocial);
+                //cmd.Parameters.AddWithValue("@Direccion", direccion);
+                //cmd.Parameters.AddWithValue("@Provincia", provincia);
+                //cmd.Parameters.AddWithValue("@Localidad", localidad);
+                cmd.Parameters.AddWithValue("@Activo", activo);
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conectorBaseDatos.Close();
+            }
         }
     }
 }

@@ -10,18 +10,16 @@ using System.Windows.Forms;
 
 namespace pryBarrazaERP
 {
-    public partial class frmPrincipalUsuario : Form
+    public partial class frmEditarUsuario : Form
     {
-        public frmPrincipalUsuario()
+        public frmEditarUsuario()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.Close();
-            MessageBox.Show("Sesion Cerrada,adios");
-            Environment.Exit(0);
+
         }
     }
 }

@@ -138,5 +138,35 @@ namespace pryBarrazaERP
             frmInfoExtra frmInfoExtra = new frmInfoExtra();
             frmInfoExtra.ShowDialog();
         }
+
+        private void btnCrearUsuario_Click(object sender, EventArgs e)
+        {
+            CConexion conexion = new CConexion();
+
+            conexion.RegistrarUsuario(
+                txtNombre.Text,
+                txtApellido.Text,
+                txtDni.Text,
+                txtUsuario.Text,
+                txtContraseña.Text,
+                cmbPerfil.Text,
+                //txtMail.Text,
+                //txtTelefono.Text,
+                //cmbRedSocial.Text,
+                //txtUsuarioRedSocial.Text,
+                //txtDireccion.Text,
+                //cmbProvincia.Text,
+                //cmbLocalidad.Text,
+                chbActivo.Checked
+            );
+
+            MessageBox.Show("Usuario registrado correctamente");
+            this.Close();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

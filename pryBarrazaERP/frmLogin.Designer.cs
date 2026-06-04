@@ -2,15 +2,8 @@
 {
     partial class frmLogin
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -37,11 +30,13 @@
             this.btnAceptar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.chbVerContraseña = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.chbVerContraseña);
             this.groupBox1.Controls.Add(this.btnCancelar);
             this.groupBox1.Controls.Add(this.txtContraseña);
             this.groupBox1.Controls.Add(this.txtUsuario);
@@ -70,7 +65,6 @@
             this.txtContraseña.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtContraseña.Location = new System.Drawing.Point(133, 76);
             this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.PasswordChar = '*';
             this.txtContraseña.Size = new System.Drawing.Size(183, 20);
             this.txtContraseña.TabIndex = 7;
             // 
@@ -119,6 +113,17 @@
             this.panel1.Size = new System.Drawing.Size(804, 97);
             this.panel1.TabIndex = 8;
             // 
+            // chbVerContraseña
+            // 
+            this.chbVerContraseña.AutoSize = true;
+            this.chbVerContraseña.Location = new System.Drawing.Point(217, 113);
+            this.chbVerContraseña.Name = "chbVerContraseña";
+            this.chbVerContraseña.Size = new System.Drawing.Size(99, 17);
+            this.chbVerContraseña.TabIndex = 10;
+            this.chbVerContraseña.Text = "Ver Contraseña";
+            this.chbVerContraseña.UseVisualStyleBackColor = true;
+            this.chbVerContraseña.CheckedChanged += new System.EventHandler(this.chbVerContraseña_CheckedChanged);
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -130,6 +135,7 @@
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.frmLogin_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -146,5 +152,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.CheckBox chbVerContraseña;
     }
 }
