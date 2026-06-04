@@ -23,6 +23,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chbVerContraseña = new System.Windows.Forms.CheckBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
@@ -30,8 +31,10 @@
             this.btnAceptar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.chbVerContraseña = new System.Windows.Forms.CheckBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -49,6 +52,17 @@
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Iniciar Sesion";
+            // 
+            // chbVerContraseña
+            // 
+            this.chbVerContraseña.AutoSize = true;
+            this.chbVerContraseña.Location = new System.Drawing.Point(217, 113);
+            this.chbVerContraseña.Name = "chbVerContraseña";
+            this.chbVerContraseña.Size = new System.Drawing.Size(99, 17);
+            this.chbVerContraseña.TabIndex = 10;
+            this.chbVerContraseña.Text = "Ver Contraseña";
+            this.chbVerContraseña.UseVisualStyleBackColor = true;
+            this.chbVerContraseña.CheckedChanged += new System.EventHandler(this.chbVerContraseña_CheckedChanged);
             // 
             // btnCancelar
             // 
@@ -107,22 +121,21 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.Location = new System.Drawing.Point(-2, -2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(804, 97);
             this.panel1.TabIndex = 8;
             // 
-            // chbVerContraseña
+            // pictureBox1
             // 
-            this.chbVerContraseña.AutoSize = true;
-            this.chbVerContraseña.Location = new System.Drawing.Point(217, 113);
-            this.chbVerContraseña.Name = "chbVerContraseña";
-            this.chbVerContraseña.Size = new System.Drawing.Size(99, 17);
-            this.chbVerContraseña.TabIndex = 10;
-            this.chbVerContraseña.Text = "Ver Contraseña";
-            this.chbVerContraseña.UseVisualStyleBackColor = true;
-            this.chbVerContraseña.CheckedChanged += new System.EventHandler(this.chbVerContraseña_CheckedChanged);
+            this.pictureBox1.Image = global::pryBarrazaERP.Properties.Resources.png_transparent_corporation_free_content_corporate_s_angle_building_text1;
+            this.pictureBox1.Location = new System.Drawing.Point(358, 29);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(129, 51);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // frmLogin
             // 
@@ -138,6 +151,8 @@
             this.Load += new System.EventHandler(this.frmLogin_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -153,5 +168,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.CheckBox chbVerContraseña;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

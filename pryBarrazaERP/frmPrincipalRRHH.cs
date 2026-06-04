@@ -19,10 +19,11 @@ namespace pryBarrazaERP
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
             this.Close();
-            MessageBox.Show("Sesion Cerrada, adios");
-            Environment.Exit(0);
+            MessageBox.Show("Sesion Cerrada con exito");
+            frmLogin login = new frmLogin();
+            login.ShowDialog();
         }
     }
 }

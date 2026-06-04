@@ -10,7 +10,7 @@
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -38,6 +38,7 @@
             this.btnCerrasSesion = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnEditUsuario = new System.Windows.Forms.Button();
+            this.btnEditarPerfilUsuario = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,7 +98,7 @@
             // 
             // btnCerrasSesion
             // 
-            this.btnCerrasSesion.Location = new System.Drawing.Point(26, 176);
+            this.btnCerrasSesion.Location = new System.Drawing.Point(26, 415);
             this.btnCerrasSesion.Name = "btnCerrasSesion";
             this.btnCerrasSesion.Size = new System.Drawing.Size(173, 23);
             this.btnCerrasSesion.TabIndex = 10;
@@ -108,6 +109,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.btnEditarPerfilUsuario);
             this.panel1.Controls.Add(this.btnEditUsuario);
             this.panel1.Controls.Add(this.btnCerrasSesion);
             this.panel1.Controls.Add(this.btnVerAuditoria);
@@ -125,6 +127,16 @@
             this.btnEditUsuario.TabIndex = 12;
             this.btnEditUsuario.Text = "Editar Usuario";
             this.btnEditUsuario.UseVisualStyleBackColor = true;
+            // 
+            // btnEditarPerfilUsuario
+            // 
+            this.btnEditarPerfilUsuario.Location = new System.Drawing.Point(26, 168);
+            this.btnEditarPerfilUsuario.Name = "btnEditarPerfilUsuario";
+            this.btnEditarPerfilUsuario.Size = new System.Drawing.Size(173, 23);
+            this.btnEditarPerfilUsuario.TabIndex = 13;
+            this.btnEditarPerfilUsuario.Text = "Editar Perfil de usuario";
+            this.btnEditarPerfilUsuario.UseVisualStyleBackColor = true;
+            this.btnEditarPerfilUsuario.Click += new System.EventHandler(this.btnEditarPerfilUsuario_Click);
             // 
             // frmPrincipalADM
             // 
@@ -155,5 +167,6 @@
         private System.Windows.Forms.Button btnCerrasSesion;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnEditUsuario;
+        private System.Windows.Forms.Button btnEditarPerfilUsuario;
     }
 }

@@ -16,6 +16,7 @@ namespace pryBarrazaERP
         public frmLogin()
         {
             InitializeComponent();
+            this.AcceptButton = btnAceptar;
         }
         int intentos = 0;
         

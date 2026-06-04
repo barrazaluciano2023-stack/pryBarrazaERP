@@ -59,6 +59,12 @@
   <ItemGroup>
     <Compile Include="clsAuditoria.cs" />
     <Compile Include="CConexion.cs" />
+    <Compile Include="frmEditarPerfilUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditarPerfilUsuario.Designer.cs">
+      <DependentUpon>frmEditarPerfilUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEditarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +147,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -158,6 +165,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BASE DE DATOS\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png-transparent-corporation-free-content-corporate-s-angle-building-text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png-transparent-corporation-free-content-corporate-s-angle-building-text1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Web.WebView2.1.0.3967.48\build\Microsoft.Web.WebView2.targets" Condition="Exists('..\packages\Microsoft.Web.WebView2.1.0.3967.48\build\Microsoft.Web.WebView2.targets')" />
