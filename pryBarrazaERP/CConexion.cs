@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.IO;
@@ -34,58 +35,21 @@ namespace pryBarrazaERP
                 throw;
             }
         }
-        public bool login(string usuario, string contrasena)
-        {
-
-            try
-            {
-                ConectarBaseDatos();
-
-                string consulta = "SELECT * FROM Usuario WHERE Nombre = @usuario AND Contrasena = @contrasena";
-
-                OleDbCommand cmd = new OleDbCommand(consulta, conectorBaseDatos);
-
-                cmd.Parameters.AddWithValue("@usuario", usuario);
-                cmd.Parameters.AddWithValue("@contraseña", contrasena);
-
-                OleDbDataReader lector = cmd.ExecuteReader();
-
-                if (lector.Read())//Si existe → devuelve true, si no existe → devuelve false
+       
+        public int RegistrarUsuario(
+            string nombre,
+            string apellido,
+            string dni,
+            string usuario,
+            string contrasena,
+            string perfil,
+            bool activo)
                 {
+                    try
+                    {
+                        ConectarBaseDatos();
 
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            catch
-            {
-                return false;
-            }
-            finally
-            {
-                if (conectorBaseDatos != null)
-                {
-                    conectorBaseDatos.Close();
-                }
-            }
-        }
-        public void RegistrarUsuario(
-         string nombre,
-         string apellido,
-         string dni,
-         string usuario,
-         string contrasena,
-         string perfil,
-         bool activo)
-        {
-            try
-            {
-                ConectarBaseDatos();
-
-                string consulta = @"INSERT INTO Usuario
+                        string consulta = @"INSERT INTO Usuario
                 (
                     Nombre,
                     Apellido,
@@ -100,28 +64,38 @@ namespace pryBarrazaERP
                     ?,?,?,?,?,?,?
                 )";
 
-                OleDbCommand cmd = new OleDbCommand(consulta, conectorBaseDatos);
+                        OleDbCommand cmd = new OleDbCommand(consulta, conectorBaseDatos);
 
-                cmd.Parameters.AddWithValue("@Nombre", nombre);
-                cmd.Parameters.AddWithValue("@Apellido", apellido);
-                cmd.Parameters.AddWithValue("@DNI", dni);
-                cmd.Parameters.AddWithValue("@Usuario", usuario);
-                cmd.Parameters.AddWithValue("@Contrasena", contrasena);
-                cmd.Parameters.AddWithValue("@Perfil", perfil);
-                cmd.Parameters.AddWithValue("@activo", activo);
+                        cmd.Parameters.AddWithValue("@Nombre", nombre);
+                        cmd.Parameters.AddWithValue("@Apellido", apellido);
+                        cmd.Parameters.AddWithValue("@DNI", dni);
+                        cmd.Parameters.AddWithValue("@Usuario", usuario);
+                        cmd.Parameters.AddWithValue("@Contrasena", contrasena);
+                        cmd.Parameters.AddWithValue("@Perfil", perfil);
+                        cmd.Parameters.AddWithValue("@activo", activo);
 
-                cmd.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                conectorBaseDatos.Close();
-            }
-        }
-        public void registrarContacto(string mail, string telefono, string redSocial, string usuarioRedSocial)
+                        cmd.ExecuteNonQuery();
+
+                        cmd.CommandText = "SELECT @@IDENTITY";
+
+                        int idUsuario = Convert.ToInt32(cmd.ExecuteScalar());
+
+                        return idUsuario;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                        return 0;
+                    }
+                    finally
+                    {
+                        if (conectorBaseDatos != null)
+                        {
+                            conectorBaseDatos.Close();
+                        }
+                    }
+                }
+        public void registrarContacto(int idUsuario, string mail, string telefono, string redSocial, string usuarioRedSocial)
         {
             {
                 try
@@ -130,15 +104,15 @@ namespace pryBarrazaERP
 
                     string consulta = @"INSERT INTO contacto
                         (
-                           mail,telefono,redSocial,usuarioRedSocial
+                           IdUsuario, mail,telefono,redSocial,usuarioRedSocial
                         )
                         VALUES
                         (
-                            ?,?,?,?
+                            ?,?,?,?,?
                         )";
 
                     OleDbCommand cmd = new OleDbCommand(consulta, conectorBaseDatos);
-
+                    cmd.Parameters.AddWithValue("@IdUsuario", idUsuario);
                     cmd.Parameters.AddWithValue("@mail", mail);
                     cmd.Parameters.AddWithValue("@telefono", telefono);
                     cmd.Parameters.AddWithValue("@redSocial", redSocial);
@@ -156,7 +130,7 @@ namespace pryBarrazaERP
                 }
             }
         }
-        public void registrarDireccion(string direccion, string provincia, string localidad)
+        public void registrarDireccion(int idUsuario, string direccion, string provincia, string localidad)
         {
             {
                 try
@@ -164,14 +138,16 @@ namespace pryBarrazaERP
                     ConectarBaseDatos();
                     string consulta = @"INSERT INTO domicilio
                     (
-                        direccion,provincia,localidad
+                       IdUsuario, direccion,provincia,localidad
                     )
                     VALUES
                         (
-                            ?,?,?
+                           ?,?,?,?
                         )";
 
                     OleDbCommand cmd = new OleDbCommand(consulta, conectorBaseDatos);
+
+                    cmd.Parameters.AddWithValue("@IdUsuario", idUsuario);
                     cmd.Parameters.AddWithValue("@direccion", direccion);
                     cmd.Parameters.AddWithValue("@provincia", provincia);
                     cmd.Parameters.AddWithValue("@localidad", localidad);
@@ -186,6 +162,229 @@ namespace pryBarrazaERP
                     conectorBaseDatos.Close();
                 }
             }
+        }
+        public string ObtenerPerfil(string usuario, string contrasena)
+        {
+            try
+            {
+                ConectarBaseDatos();
+
+                string consulta = "SELECT Perfil FROM Usuario WHERE Nombre = ? AND Contrasena = ?";
+
+                OleDbCommand cmd = new OleDbCommand(consulta, conectorBaseDatos);
+
+                cmd.Parameters.AddWithValue("@usuario", usuario);
+                cmd.Parameters.AddWithValue("@contrasena", contrasena);
+
+                object resultado = cmd.ExecuteScalar();
+
+                if (resultado != null)
+                {
+                    return resultado.ToString();
+                }
+
+                return "";
+            }
+            catch
+            {
+                return "";
+            }
+            finally
+            {
+                if (conectorBaseDatos != null)
+                {
+                    conectorBaseDatos.Close();
+                }
+            }
+        }
+        
+
+        public DataTable ListarUsuarios()
+        {
+            DataTable tabla = new DataTable();
+
+            try
+            {
+                ConectarBaseDatos();
+
+                string consulta =
+                @"SELECT IdUsuario,
+                 Nombre & ' ' & Apellido AS NombreCompleto
+          FROM Usuario";
+
+                OleDbDataAdapter da =
+                    new OleDbDataAdapter(consulta, conectorBaseDatos);
+
+                da.Fill(tabla);
+            }
+            finally
+            {
+                conectorBaseDatos.Close();
+            }
+
+            return tabla;
+        }
+        public DataTable ObtenerDatosUsuario(int idUsuario)
+        {
+            DataTable tabla = new DataTable();
+
+            try
+            {
+                ConectarBaseDatos();
+
+                string consulta =
+                  @"SELECT *
+                  FROM (Usuario
+                  INNER JOIN contacto
+                  ON Usuario.IdUsuario = contacto.IdUsuario)
+                  INNER JOIN domicilio
+                  ON Usuario.IdUsuario = domicilio.IdUsuario
+                  WHERE Usuario.IdUsuario = ?";
+
+                OleDbCommand cmd =
+                    new OleDbCommand(consulta, conectorBaseDatos);
+
+                cmd.Parameters.AddWithValue("@IdUsuario", idUsuario);
+
+                OleDbDataAdapter da =
+                    new OleDbDataAdapter(cmd);
+
+                da.Fill(tabla);
+            }
+            finally
+            {
+                conectorBaseDatos.Close();
+            }
+
+            return tabla;
+        }
+
+        public void ActualizarUsuario(
+        int idUsuario,
+        string nombre,
+        string apellido,
+        string dni,
+        string usuario,
+        string contrasena,
+        string perfil,
+        bool activo)
+        {
+            ConectarBaseDatos();
+
+            string consulta =
+            @"UPDATE Usuario
+            SET Nombre=?,
+          Apellido=?,
+          dni=?,
+          usuario=?,
+          Contrasena=?,
+          Perfil=?,
+          activo=?
+            WHERE IdUsuario=?";
+
+            OleDbCommand cmd =
+                new OleDbCommand(consulta, conectorBaseDatos);
+
+            cmd.Parameters.AddWithValue("@Nombre", nombre);
+            cmd.Parameters.AddWithValue("@Apellido", apellido);
+            cmd.Parameters.AddWithValue("@dni", dni);
+            cmd.Parameters.AddWithValue("@usuario", usuario);
+            cmd.Parameters.AddWithValue("@Contrasena", contrasena);
+            cmd.Parameters.AddWithValue("@Perfil", perfil);
+            cmd.Parameters.AddWithValue("@activo", activo);
+            cmd.Parameters.AddWithValue("@IdUsuario", idUsuario);
+
+            cmd.ExecuteNonQuery();
+
+            conectorBaseDatos.Close();
+        }
+
+        public void ActualizarContacto(
+            int idUsuario,
+            string mail,
+            string telefono,
+            string redSocial,
+            string usuarioRedSocial)
+        {
+            ConectarBaseDatos();
+
+            string consulta =
+            @"UPDATE contacto
+            SET mail=?,
+          telefono=?,
+          redSocial=?,
+          usuarioRedSocial=?
+            WHERE IdUsuario=?";
+
+            OleDbCommand cmd =
+                new OleDbCommand(consulta, conectorBaseDatos);
+
+            cmd.Parameters.AddWithValue("@mail", mail);
+            cmd.Parameters.AddWithValue("@telefono", telefono);
+            cmd.Parameters.AddWithValue("@redSocial", redSocial);
+            cmd.Parameters.AddWithValue("@usuarioRedSocial", usuarioRedSocial);
+            cmd.Parameters.AddWithValue("@IdUsuario", idUsuario);
+
+            cmd.ExecuteNonQuery();
+
+            conectorBaseDatos.Close();
+        }
+
+        public void ActualizarDireccion(
+            int idUsuario,
+            string direccion,
+            string provincia,
+            string localidad)
+        {
+            ConectarBaseDatos();
+
+            string consulta =
+            @"UPDATE domicilio
+            SET direccion=?,
+             provincia=?,
+          localidad=?
+            WHERE IdUsuario=?";
+
+            OleDbCommand cmd =
+                new OleDbCommand(consulta, conectorBaseDatos);
+
+            cmd.Parameters.AddWithValue("@direccion", direccion);
+            cmd.Parameters.AddWithValue("@provincia", provincia);
+            cmd.Parameters.AddWithValue("@localidad", localidad);
+            cmd.Parameters.AddWithValue("@IdUsuario", idUsuario);
+
+            cmd.ExecuteNonQuery();
+
+            conectorBaseDatos.Close();
+        }
+
+        public DataTable ObtenerLocalidades(string provincia)
+        {
+            DataTable tabla = new DataTable();
+
+            try
+            {
+                ConectarBaseDatos();
+
+                string consulta =
+                    "SELECT Localidad FROM Localidades WHERE Provincia = ? ORDER BY Localidad";
+
+                OleDbCommand cmd =
+                    new OleDbCommand(consulta, conectorBaseDatos);
+
+                cmd.Parameters.AddWithValue("@Provincia", provincia);
+
+                OleDbDataAdapter da =
+                    new OleDbDataAdapter(cmd);
+
+                da.Fill(tabla);
+            }
+            finally
+            {
+                conectorBaseDatos.Close();
+            }
+
+            return tabla;
         }
     }
 }

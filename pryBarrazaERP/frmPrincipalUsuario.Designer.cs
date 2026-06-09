@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnEditUsuario = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.lblBienvenido = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -48,6 +48,16 @@
             this.panel1.Size = new System.Drawing.Size(238, 448);
             this.panel1.TabIndex = 13;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::pryBarrazaERP.Properties.Resources.minimalist_building_logo_in_flat_style_png;
+            this.pictureBox1.Location = new System.Drawing.Point(11, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(203, 212);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            // 
             // btnEditUsuario
             // 
             this.btnEditUsuario.Location = new System.Drawing.Point(22, 336);
@@ -56,6 +66,7 @@
             this.btnEditUsuario.TabIndex = 12;
             this.btnEditUsuario.Text = "Editar Informacion Personal";
             this.btnEditUsuario.UseVisualStyleBackColor = true;
+            this.btnEditUsuario.Click += new System.EventHandler(this.btnEditUsuario_Click);
             // 
             // button1
             // 
@@ -76,16 +87,6 @@
             this.lblBienvenido.Size = new System.Drawing.Size(159, 32);
             this.lblBienvenido.TabIndex = 12;
             this.lblBienvenido.Text = "Bienvenido:";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::pryBarrazaERP.Properties.Resources.minimalist_building_logo_in_flat_style_png;
-            this.pictureBox1.Location = new System.Drawing.Point(11, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(203, 212);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
             // 
             // frmPrincipalUsuario
             // 

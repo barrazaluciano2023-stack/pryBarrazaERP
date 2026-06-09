@@ -12,9 +12,13 @@ namespace pryBarrazaERP
 {
     public partial class frmPrincipalUsuario : Form
     {
-        public frmPrincipalUsuario()
+        string usuario;
+        public frmPrincipalUsuario(string nombreUsuario)
         {
             InitializeComponent();
+
+            usuario = nombreUsuario;
+            lblBienvenido.Text = "Bienvenido: " + usuario;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -24,6 +28,12 @@ namespace pryBarrazaERP
             frmLogin login = new frmLogin();
             login.ShowDialog();
             
+        }
+
+        private void btnEditUsuario_Click(object sender, EventArgs e)
+        {
+            frmEditarUsuario editarUsuario = new frmEditarUsuario(usuario);
+            editarUsuario.ShowDialog();
         }
     }
 }

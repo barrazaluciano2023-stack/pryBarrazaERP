@@ -30,6 +30,12 @@ namespace pryBarrazaERP
         private void principal_Load(object sender, EventArgs e)
         {
             lblFecha.Text = DateTime.Now.ToLongDateString();
+            clsAuditoria auditoria = new clsAuditoria();
+
+            auditoria.GrabarMovimiento(
+                usuario,
+                "frmPrincipalADM",
+                "Ingreso al sistema");
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -49,7 +55,16 @@ namespace pryBarrazaERP
 
         private void btmAgregarUsuario_Click(object sender, EventArgs e)
         {
-            frmRegistrarUsuario frmRegistrarUsuario = new frmRegistrarUsuario();
+            clsAuditoria auditoria = new clsAuditoria();
+
+            auditoria.GrabarMovimiento(
+                usuario,
+                "frmRegistrarUsuario",
+                "Abrió Registrar Usuario");
+
+            frmRegistrarUsuario frmRegistrarUsuario =
+                new frmRegistrarUsuario();
+
             frmRegistrarUsuario.ShowDialog();
         }
 
@@ -57,6 +72,12 @@ namespace pryBarrazaERP
         private void btnVerAuditoria_Click(object sender, EventArgs e)
         {
             frmVerAuditoria frmVerAuditoria = new frmVerAuditoria();
+            clsAuditoria auditoria =  new clsAuditoria();
+
+            auditoria.GrabarMovimiento(
+                usuario,
+                "frmVerAuditoria",
+                "Consultó Auditoría");
             frmVerAuditoria.ShowDialog();
         }
 
@@ -67,16 +88,48 @@ namespace pryBarrazaERP
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+            clsAuditoria auditoria = new clsAuditoria();
+
+            auditoria.GrabarMovimiento(
+                usuario,
+                "frmPrincipalADM",
+                "Cerró Sesión");
+
             this.Close();
-            MessageBox.Show("Sesion Cerrada con exito");
-            frmLogin login = new frmLogin();
+
+            MessageBox.Show(
+                "Sesion Cerrada con exito");
+
+            frmLogin login =
+                new frmLogin();
+
             login.ShowDialog();
         }
 
         private void btnEditarPerfilUsuario_Click(object sender, EventArgs e)
         {
             frmEditarPerfilUsuario frmEditarPerfil = new frmEditarPerfilUsuario();
+            clsAuditoria auditoria = new clsAuditoria();
+
+            auditoria.GrabarMovimiento(
+                usuario,
+                "frmEditarUsuario",
+                "Abrió Editar Usuario");
             frmEditarPerfil.ShowDialog();
+        }
+
+        private void btnEditUsuario_Click(object sender, EventArgs e)
+        {
+            clsAuditoria auditoria = new clsAuditoria();
+
+            auditoria.GrabarMovimiento(
+                usuario,
+                "frmEditarUsuario",
+                "Abrió Editar Usuario");
+
+            frmEditarUsuario frmEditarUsuario = new frmEditarUsuario(usuario);
+            frmEditarUsuario.ShowDialog();
+            
         }
     }
 }

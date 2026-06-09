@@ -35,7 +35,12 @@ namespace pryBarrazaERP
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
+            CConexion conexion = new CConexion();
 
+            cmbLocalidad.DataSource =
+                conexion.ObtenerLocalidades(cmbProvincia.Text);
+
+            cmbLocalidad.DisplayMember = "Localidad";
         }
 
         private void label8_Click(object sender, EventArgs e)
@@ -58,29 +63,36 @@ namespace pryBarrazaERP
         {
             CConexion conexion = new CConexion();
 
-            conexion.RegistrarUsuario(
+            int idUsuario = conexion.RegistrarUsuario(
                 txtNombre.Text,
                 txtApellido.Text,
                 txtDni.Text,
                 txtUsuario.Text,
                 txtContraseña.Text,
-                cmbPerfil.Text, 
+                cmbPerfil.Text,
                 chbActivo.Checked
             );
-            conexion.registrarDireccion(
-                txtDireccion.Text,
-                cmbProvincia.Text,
-                cmbLocalidad.Text
-            );
-            conexion.registrarContacto(
-                txtMail.Text,
-                txtTelefono.Text,
-                cmbRedSocial.Text,
-                txtUsuarioRedSocial.Text
-            );
 
-            MessageBox.Show("Usuario registrado correctamente");
-            this.Close();
+            if (idUsuario > 0)
+            {
+                conexion.registrarDireccion(
+                    idUsuario,
+                    txtDireccion.Text,
+                    cmbProvincia.Text,
+                    cmbLocalidad.Text
+                );
+
+                conexion.registrarContacto(
+                    idUsuario,
+                    txtMail.Text,
+                    txtTelefono.Text,
+                    cmbRedSocial.Text,
+                    txtUsuarioRedSocial.Text
+                );
+
+                MessageBox.Show("Usuario registrado correctamente");
+                this.Close();
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

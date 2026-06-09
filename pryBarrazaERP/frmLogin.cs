@@ -31,39 +31,45 @@ namespace pryBarrazaERP
                 txtUsuario.Focus();
                 return;
             }
-            bool acceso = conexion.login(txtUsuario.Text, txtContraseña.Text);
+            string perfil = conexion.ObtenerPerfil(txtUsuario.Text, txtContraseña.Text);
             DateTime fechaYHora = DateTime.Now;
             grabarUsuario.GrabarDatos(txtUsuario.Text, txtContraseña.Text, fechaYHora.ToString(), intentos.ToString());
-            if (acceso == true)
+            if (perfil != "")
             {
-
-                frmPrincipalADM principal = new frmPrincipalADM(txtUsuario.Text);
-                principal.Show();
-
-                this.Hide();//Cierra el formulario de login pero no la aplicación
-            }
-            else
-            {
-                intentos++;
-
-                MessageBox.Show("Datos incorrectos ");
-
-                txtUsuario.Clear();
-                txtContraseña.Clear();
-                txtUsuario.Focus();
-
-                if (intentos >= 3)
+                if (perfil == "admin")
                 {
-                    MessageBox.Show("Excediste el numero de intentos");
-                    Application.Exit();
+                    frmPrincipalADM principal = new frmPrincipalADM(txtUsuario.Text);
+                    principal.Show();
                 }
+                else if (perfil == "Recursos Humanos")
+                {
+                    frmPrincipalRRHH principal = new frmPrincipalRRHH(txtUsuario.Text);
+                    principal.Show();
+                }
+                else if (perfil == "usuario")
+                {
+                    frmPrincipalUsuario principal = new frmPrincipalUsuario(txtUsuario.Text);
+                    principal.Show();
+                }
+
+                this.Hide();
             }
         }
 
         
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
+
+            DialogResult respuesta = MessageBox.Show(
+                "¿Desea salir del sistema?",
+                "Confirmar salida",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (respuesta == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
         private void chbVerContraseña_CheckedChanged(object sender, EventArgs e)

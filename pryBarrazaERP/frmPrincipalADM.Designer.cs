@@ -37,9 +37,9 @@
             this.btnVerAuditoria = new System.Windows.Forms.Button();
             this.btnCerrasSesion = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnEditarPerfilUsuario = new System.Windows.Forms.Button();
             this.btnEditUsuario = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -90,7 +90,7 @@
             // 
             // btnVerAuditoria
             // 
-            this.btnVerAuditoria.Location = new System.Drawing.Point(26, 271);
+            this.btnVerAuditoria.Location = new System.Drawing.Point(26, 365);
             this.btnVerAuditoria.Name = "btnVerAuditoria";
             this.btnVerAuditoria.Size = new System.Drawing.Size(173, 23);
             this.btnVerAuditoria.TabIndex = 11;
@@ -122,25 +122,6 @@
             this.panel1.Size = new System.Drawing.Size(238, 448);
             this.panel1.TabIndex = 11;
             // 
-            // btnEditarPerfilUsuario
-            // 
-            this.btnEditarPerfilUsuario.Location = new System.Drawing.Point(26, 372);
-            this.btnEditarPerfilUsuario.Name = "btnEditarPerfilUsuario";
-            this.btnEditarPerfilUsuario.Size = new System.Drawing.Size(173, 23);
-            this.btnEditarPerfilUsuario.TabIndex = 13;
-            this.btnEditarPerfilUsuario.Text = "Editar Perfil de usuario";
-            this.btnEditarPerfilUsuario.UseVisualStyleBackColor = true;
-            this.btnEditarPerfilUsuario.Click += new System.EventHandler(this.btnEditarPerfilUsuario_Click);
-            // 
-            // btnEditUsuario
-            // 
-            this.btnEditUsuario.Location = new System.Drawing.Point(26, 324);
-            this.btnEditUsuario.Name = "btnEditUsuario";
-            this.btnEditUsuario.Size = new System.Drawing.Size(173, 23);
-            this.btnEditUsuario.TabIndex = 12;
-            this.btnEditUsuario.Text = "Editar Usuario";
-            this.btnEditUsuario.UseVisualStyleBackColor = true;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::pryBarrazaERP.Properties.Resources.minimalist_building_logo_in_flat_style_png;
@@ -150,6 +131,26 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
+            // 
+            // btnEditarPerfilUsuario
+            // 
+            this.btnEditarPerfilUsuario.Location = new System.Drawing.Point(26, 314);
+            this.btnEditarPerfilUsuario.Name = "btnEditarPerfilUsuario";
+            this.btnEditarPerfilUsuario.Size = new System.Drawing.Size(173, 23);
+            this.btnEditarPerfilUsuario.TabIndex = 13;
+            this.btnEditarPerfilUsuario.Text = "Editar Perfil de usuario";
+            this.btnEditarPerfilUsuario.UseVisualStyleBackColor = true;
+            this.btnEditarPerfilUsuario.Click += new System.EventHandler(this.btnEditarPerfilUsuario_Click);
+            // 
+            // btnEditUsuario
+            // 
+            this.btnEditUsuario.Location = new System.Drawing.Point(26, 266);
+            this.btnEditUsuario.Name = "btnEditUsuario";
+            this.btnEditUsuario.Size = new System.Drawing.Size(173, 23);
+            this.btnEditUsuario.TabIndex = 12;
+            this.btnEditUsuario.Text = "Editar Usuario";
+            this.btnEditUsuario.UseVisualStyleBackColor = true;
+            this.btnEditUsuario.Click += new System.EventHandler(this.btnEditUsuario_Click);
             // 
             // frmPrincipalADM
             // 

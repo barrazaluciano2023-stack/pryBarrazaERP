@@ -62,7 +62,149 @@ namespace pryBarrazaERP
 
             ingresoos.DataSource = dt;
         }
+
+        public void GrabarMovimiento(
+            string usuario,
+            string formulario,
+            string accion)
+        {
+            try
+            {
+                conexion.ConectarBaseDatos();
+
+                string consulta =
+                @"INSERT INTO AuditoriaMovimientos
+                (
+                    Usuario,
+                    FechaHora,
+                    Formulario,
+                    Accion
+                )
+                VALUES
+                (
+                    ?,?,?,?
+                )";
+
+                OleDbCommand cmd =
+                    new OleDbCommand(
+                        consulta,
+                        conexion.conectorBaseDatos);
+
+                cmd.Parameters.AddWithValue(
+                    "@Usuario",
+                    usuario);
+
+                cmd.Parameters.AddWithValue(
+                    "@FechaHora",
+                    DateTime.Now);
+
+                cmd.Parameters.AddWithValue(
+                    "@Formulario",
+                    formulario);
+
+                cmd.Parameters.AddWithValue(
+                    "@Accion",
+                    accion);
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conexion.conectorBaseDatos.Close();
+            }
+        }
+
+        public void CargarMovimientos(DataGridView dgv)
+        {
+            conexion.ConectarBaseDatos();
+
+            string consulta =
+                "SELECT * FROM AuditoriaMovimientos";
+
+            OleDbDataAdapter da =
+                new OleDbDataAdapter(
+                    consulta,
+                    conexion.conectorBaseDatos);
+
+            DataTable dt =
+                new DataTable();
+
+            da.Fill(dt);
+
+            dgv.DataSource = dt;
+
+            conexion.conectorBaseDatos.Close();
+        }
+        public DataTable ObtenerIngresos()
+        {
+            DataTable dt = new DataTable();
+
+            conexion.ConectarBaseDatos();
+
+            string consulta =
+                "SELECT * FROM [Auditoria-Sesion]";
+
+            OleDbDataAdapter da =
+                new OleDbDataAdapter(
+                    consulta,
+                    conexion.conectorBaseDatos);
+
+            da.Fill(dt);
+
+            conexion.conectorBaseDatos.Close();
+
+            return dt;
+        }
+        public DataTable ObtenerUsuarios()
+        {
+            DataTable dt = new DataTable();
+
+            try
+            {
+                conexion.ConectarBaseDatos();
+
+                string consulta =
+                    "SELECT DISTINCT usuario FROM [Auditoria-Sesion]";
+
+                OleDbDataAdapter da =
+                    new OleDbDataAdapter(
+                        consulta,
+                        conexion.conectorBaseDatos);
+
+                da.Fill(dt);
+            }
+            finally
+            {
+                conexion.conectorBaseDatos.Close();
+            }
+
+            return dt;
+        }
+        public DataTable ObtenerMovimientos()
+        {
+            DataTable dt = new DataTable();
+
+            conexion.ConectarBaseDatos();
+
+            string consulta =
+                "SELECT * FROM AuditoriaMovimientos";
+
+            OleDbDataAdapter da =
+                new OleDbDataAdapter(
+                    consulta,
+                    conexion.conectorBaseDatos);
+
+            da.Fill(dt);
+
+            conexion.conectorBaseDatos.Close();
+
+            return dt;
+        }
     }
-            
-    
+
+
 }
