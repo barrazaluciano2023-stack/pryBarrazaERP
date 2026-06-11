@@ -50,19 +50,19 @@ namespace pryBarrazaERP
                         ConectarBaseDatos();
 
                         string consulta = @"INSERT INTO Usuario
-                (
-                    Nombre,
-                    Apellido,
-                    dni,
-                    usuario,
-                    Contrasena,
-                    Perfil,
-                    activo
-                )
-                VALUES
-                (
-                    ?,?,?,?,?,?,?
-                )";
+                        (
+                            Nombre,
+                            Apellido,
+                            dni,
+                            usuario,
+                            Contrasena,
+                            Perfil,
+                            activo
+                        )
+                        VALUES
+                        (
+                            ?,?,?,?,?,?,?
+                        )";
 
                         OleDbCommand cmd = new OleDbCommand(consulta, conectorBaseDatos);
 
@@ -272,15 +272,15 @@ namespace pryBarrazaERP
             ConectarBaseDatos();
 
             string consulta =
-            @"UPDATE Usuario
-            SET Nombre=?,
-          Apellido=?,
-          dni=?,
-          usuario=?,
-          Contrasena=?,
-          Perfil=?,
-          activo=?
-            WHERE IdUsuario=?";
+                @"UPDATE Usuario
+                SET Nombre=?,
+                Apellido=?,
+                dni=?,
+                usuario=?,
+                Contrasena=?,
+                Perfil=?,
+                activo=?
+                WHERE IdUsuario=?";
 
             OleDbCommand cmd =
                 new OleDbCommand(consulta, conectorBaseDatos);
@@ -311,13 +311,12 @@ namespace pryBarrazaERP
             string consulta =
             @"UPDATE contacto
             SET mail=?,
-          telefono=?,
-          redSocial=?,
-          usuarioRedSocial=?
+            telefono=?,
+            redSocial=?,
+            usuarioRedSocial=?
             WHERE IdUsuario=?";
 
-            OleDbCommand cmd =
-                new OleDbCommand(consulta, conectorBaseDatos);
+            OleDbCommand cmd = new OleDbCommand(consulta, conectorBaseDatos);
 
             cmd.Parameters.AddWithValue("@mail", mail);
             cmd.Parameters.AddWithValue("@telefono", telefono);
@@ -345,8 +344,7 @@ namespace pryBarrazaERP
           localidad=?
             WHERE IdUsuario=?";
 
-            OleDbCommand cmd =
-                new OleDbCommand(consulta, conectorBaseDatos);
+            OleDbCommand cmd =  new OleDbCommand(consulta, conectorBaseDatos);
 
             cmd.Parameters.AddWithValue("@direccion", direccion);
             cmd.Parameters.AddWithValue("@provincia", provincia);
@@ -385,6 +383,107 @@ namespace pryBarrazaERP
             }
 
             return tabla;
+        }
+        public int ObtenerIdUsuarioPorDni(string dni)
+        {
+            int idUsuario = 0;
+
+            try
+            {
+                ConectarBaseDatos();
+
+                string consulta =
+                    "SELECT IdUsuario FROM Usuario WHERE DNI = ?";
+
+                OleDbCommand cmd =
+                    new OleDbCommand(consulta, conectorBaseDatos);
+
+                cmd.Parameters.AddWithValue("@DNI", dni);
+
+                object resultado = cmd.ExecuteScalar();
+
+                if (resultado != null)
+                {
+                    idUsuario = Convert.ToInt32(resultado);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conectorBaseDatos.Close();
+            }
+
+            return idUsuario;
+        }
+        public void registrarContactoExtra(int idUsuario, string mail, string telefono, string redSocial)
+        {
+            {
+                try
+                {
+                    ConectarBaseDatos();
+
+                    string consulta = @"INSERT INTO contacto
+                        (
+                           IdUsuario, mail,telefono,redSocial
+                        )
+                        VALUES
+                        (
+                            ?,?,?,?
+                        )";
+
+                    OleDbCommand cmd = new OleDbCommand(consulta, conectorBaseDatos);
+                    cmd.Parameters.AddWithValue("@IdUsuario", idUsuario);
+                    cmd.Parameters.AddWithValue("@mail", mail);
+                    cmd.Parameters.AddWithValue("@telefono", telefono);
+                    cmd.Parameters.AddWithValue("@redSocial", redSocial);
+
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    conectorBaseDatos.Close();
+                }
+            }
+        }
+        public void registrarDireccion2(int idUsuario, string direccion, string provincia, string localidad)
+        {
+            {
+                try
+                {
+                    ConectarBaseDatos();
+                    string consulta = @"INSERT INTO domicilio
+                    (
+                       IdUsuario, direccion,provincia,localidad
+                    )
+                    VALUES
+                        (
+                           ?,?,?,?
+                        )";
+
+                    OleDbCommand cmd = new OleDbCommand(consulta, conectorBaseDatos);
+
+                    cmd.Parameters.AddWithValue("@IdUsuario", idUsuario);
+                    cmd.Parameters.AddWithValue("@direccion", direccion);
+                    cmd.Parameters.AddWithValue("@provincia", provincia);
+                    cmd.Parameters.AddWithValue("@localidad", localidad);
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    conectorBaseDatos.Close();
+                }
+            }
         }
     }
 }

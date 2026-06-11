@@ -44,8 +44,7 @@ namespace pryBarrazaERP
 
             CConexion conexion = new CConexion();
 
-            DataTable tabla =
-                conexion.ObtenerDatosUsuario(idUsuario);
+            DataTable tabla = conexion.ObtenerDatosUsuario(idUsuario);
 
             if (tabla.Rows.Count > 0)
             {
@@ -56,16 +55,33 @@ namespace pryBarrazaERP
                 txtDni.Text = fila["dni"].ToString();
                 txtUsuario.Text = fila["usuario"].ToString();
                 txtContraseña.Text = fila["Contrasena"].ToString();
+                cmbPerfil.Text = fila["Perfil"].ToString();
+                chbActivo.Checked = Convert.ToBoolean(fila["Activo"]);
+
 
                 txtMail.Text = fila["mail"].ToString();
                 txtTelefono.Text = fila["telefono"].ToString();
+                cmbRedSocial.Text= fila["redSocial"].ToString();
+                txtUsuarioRedSocial.Text= fila["usuarioRedSocial"].ToString();
 
                 txtDireccion.Text = fila["direccion"].ToString();
+                cmbProvincia.Text = fila["provincia"].ToString();
+                cmbLocalidad.Text = fila["localidad"].ToString();
             }
         }
 
         private void btnGuardarCambios_Click(object sender, EventArgs e)
         {
+            if (!ValidarCampos())
+            {
+                MessageBox.Show(
+                    "Debe completar todos los campos obligatorios",
+                    "Validación",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
+                return;
+            }
             int idUsuario =
             Convert.ToInt32(cmbUsuarios.SelectedValue);
 
@@ -102,5 +118,173 @@ namespace pryBarrazaERP
         {
             this.Close();
         }
+
+        private void cmbProvincia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CConexion conexion = new CConexion();
+
+            cmbLocalidad.DataSource =
+                conexion.ObtenerLocalidades(cmbProvincia.Text);
+
+            cmbLocalidad.DisplayMember = "Localidad";
+        }
+
+        private bool ValidarCampos()
+        {
+            bool valido = true;
+
+            errorProvider1.Clear();
+
+            // Restaurar colores
+            txtNombre.BackColor = Color.White;
+            txtApellido.BackColor = Color.White;
+            txtDni.BackColor = Color.White;
+            txtUsuario.BackColor = Color.White;
+            txtContraseña.BackColor = Color.White;
+            txtDireccion.BackColor = Color.White;
+            txtMail.BackColor = Color.White;
+            txtTelefono.BackColor = Color.White;
+            txtUsuarioRedSocial.BackColor = Color.White;
+
+            cmbPerfil.BackColor = Color.White;
+            cmbProvincia.BackColor = Color.White;
+            cmbLocalidad.BackColor = Color.White;
+            cmbRedSocial.BackColor = Color.White;
+
+            // Validaciones
+
+            if (txtNombre.Text.Trim() == "")
+            {
+                txtNombre.BackColor = Color.LightPink;
+                errorProvider1.SetError(txtNombre, "Ingrese un nombre");
+                valido = false;
+            }
+
+            if (txtApellido.Text.Trim() == "")
+            {
+                txtApellido.BackColor = Color.LightPink;
+                errorProvider1.SetError(txtApellido, "Ingrese un apellido");
+                valido = false;
+            }
+
+            if (txtDni.Text.Trim() == "")
+            {
+                txtDni.BackColor = Color.LightPink;
+                errorProvider1.SetError(txtDni, "Ingrese un DNI");
+                valido = false;
+            }
+
+            if (txtUsuario.Text.Trim() == "")
+            {
+                txtUsuario.BackColor = Color.LightPink;
+                errorProvider1.SetError(txtUsuario, "Ingrese un usuario");
+                valido = false;
+            }
+
+            if (txtContraseña.Text.Trim() == "")
+            {
+                txtContraseña.BackColor = Color.LightPink;
+                errorProvider1.SetError(txtContraseña, "Ingrese una contraseña");
+                valido = false;
+            }
+
+            if (cmbPerfil.Text == "")
+            {
+                cmbPerfil.BackColor = Color.LightPink;
+                errorProvider1.SetError(cmbPerfil, "Seleccione un perfil");
+                valido = false;
+            }
+
+            if (txtDireccion.Text.Trim() == "")
+            {
+                txtDireccion.BackColor = Color.LightPink;
+                errorProvider1.SetError(txtDireccion, "Ingrese una dirección");
+                valido = false;
+            }
+
+            if (cmbProvincia.Text == "")
+            {
+                cmbProvincia.BackColor = Color.LightPink;
+                errorProvider1.SetError(cmbProvincia, "Seleccione una provincia");
+                valido = false;
+            }
+
+            if (cmbLocalidad.Text == "")
+            {
+                cmbLocalidad.BackColor = Color.LightPink;
+                errorProvider1.SetError(cmbLocalidad, "Seleccione una localidad");
+                valido = false;
+            }
+
+            if (txtMail.Text.Trim() == "")
+            {
+                txtMail.BackColor = Color.LightPink;
+                errorProvider1.SetError(txtMail, "Ingrese un mail");
+                valido = false;
+            }
+
+            if (txtTelefono.Text.Trim() == "")
+            {
+                txtTelefono.BackColor = Color.LightPink;
+                errorProvider1.SetError(txtTelefono, "Ingrese un teléfono");
+                valido = false;
+            }
+
+            if (cmbRedSocial.Text == "")
+            {
+                cmbRedSocial.BackColor = Color.LightPink;
+                errorProvider1.SetError(cmbRedSocial, "Seleccione una red social");
+                valido = false;
+            }
+
+            if (txtUsuarioRedSocial.Text.Trim() == "")
+            {
+                txtUsuarioRedSocial.BackColor = Color.LightPink;
+                errorProvider1.SetError(txtUsuarioRedSocial, "Ingrese el usuario de la red social");
+                valido = false;
+            }
+
+            return valido;
+        }
+
+        private void ValidarControl(Control control, ref bool valido)
+        {
+            // Recorrer controles dentro de GroupBox
+            foreach (Control c in control.Controls)
+            {
+                ValidarControl(c, ref valido);
+            }
+
+            if (control is TextBox)
+            {
+                if (string.IsNullOrWhiteSpace(control.Text))
+                {
+                    control.BackColor = Color.LightPink;
+                    errorProvider1.SetError(control, "Campo obligatorio");
+                    valido = false;
+                }
+                else
+                {
+                    control.BackColor = Color.White;
+                    errorProvider1.SetError(control, "");
+                }
+            }
+
+            if (control is ComboBox)
+            {
+                if (string.IsNullOrWhiteSpace(control.Text))
+                {
+                    control.BackColor = Color.LightPink;
+                    errorProvider1.SetError(control, "Seleccione una opción");
+                    valido = false;
+                }
+                else
+                {
+                    control.BackColor = Color.White;
+                    errorProvider1.SetError(control, "");
+                }
+            }
+        }
+
     }
 }

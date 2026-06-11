@@ -30,17 +30,17 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dtvIngresos = new System.Windows.Forms.DataGridView();
-            this.dgvMovimientos = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
             this.cmbUsuarioIngresos = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dtvIngresos = new System.Windows.Forms.DataGridView();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.cmbUsuarioMovimientos = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.dgvMovimientos = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtvIngresos)).BeginInit();
+            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovimientos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,6 +68,32 @@
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
+            // cmbUsuarioIngresos
+            // 
+            this.cmbUsuarioIngresos.FormattingEnabled = true;
+            this.cmbUsuarioIngresos.Location = new System.Drawing.Point(406, 27);
+            this.cmbUsuarioIngresos.Name = "cmbUsuarioIngresos";
+            this.cmbUsuarioIngresos.Size = new System.Drawing.Size(336, 21);
+            this.cmbUsuarioIngresos.TabIndex = 3;
+            this.cmbUsuarioIngresos.SelectedIndexChanged += new System.EventHandler(this.cmbUsuarioIngresos_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(82, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(111, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Seleccione el usuario:";
+            // 
+            // dtvIngresos
+            // 
+            this.dtvIngresos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtvIngresos.Location = new System.Drawing.Point(37, 79);
+            this.dtvIngresos.Name = "dtvIngresos";
+            this.dtvIngresos.Size = new System.Drawing.Size(718, 334);
+            this.dtvIngresos.TabIndex = 1;
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.cmbUsuarioMovimientos);
@@ -80,40 +106,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Movimientos en el sistema";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // dtvIngresos
-            // 
-            this.dtvIngresos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtvIngresos.Location = new System.Drawing.Point(37, 79);
-            this.dtvIngresos.Name = "dtvIngresos";
-            this.dtvIngresos.Size = new System.Drawing.Size(718, 334);
-            this.dtvIngresos.TabIndex = 1;
-            // 
-            // dgvMovimientos
-            // 
-            this.dgvMovimientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMovimientos.Location = new System.Drawing.Point(40, 78);
-            this.dgvMovimientos.Name = "dgvMovimientos";
-            this.dgvMovimientos.Size = new System.Drawing.Size(675, 321);
-            this.dgvMovimientos.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(82, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Seleccione el usuario:";
-            // 
-            // cmbUsuarioIngresos
-            // 
-            this.cmbUsuarioIngresos.FormattingEnabled = true;
-            this.cmbUsuarioIngresos.Location = new System.Drawing.Point(406, 27);
-            this.cmbUsuarioIngresos.Name = "cmbUsuarioIngresos";
-            this.cmbUsuarioIngresos.Size = new System.Drawing.Size(336, 21);
-            this.cmbUsuarioIngresos.TabIndex = 3;
-            this.cmbUsuarioIngresos.SelectedIndexChanged += new System.EventHandler(this.cmbUsuarioIngresos_SelectedIndexChanged);
             // 
             // cmbUsuarioMovimientos
             // 
@@ -133,6 +125,14 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Seleccione el usuario:";
             // 
+            // dgvMovimientos
+            // 
+            this.dgvMovimientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMovimientos.Location = new System.Drawing.Point(40, 78);
+            this.dgvMovimientos.Name = "dgvMovimientos";
+            this.dgvMovimientos.Size = new System.Drawing.Size(675, 321);
+            this.dgvMovimientos.TabIndex = 1;
+            // 
             // frmVerAuditoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -140,14 +140,15 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tabControl1);
             this.Name = "frmVerAuditoria";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmVerAuditoria";
             this.Load += new System.EventHandler(this.frmVerAuditoria_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtvIngresos)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtvIngresos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovimientos)).EndInit();
             this.ResumeLayout(false);
 

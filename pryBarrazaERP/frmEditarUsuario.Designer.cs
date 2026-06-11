@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.chbActivo = new System.Windows.Forms.CheckBox();
             this.cmbPerfil = new System.Windows.Forms.ComboBox();
@@ -63,10 +64,12 @@
             this.cmbUsuarios = new System.Windows.Forms.ComboBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox3
@@ -87,7 +90,7 @@
             this.groupBox3.Location = new System.Drawing.Point(110, 102);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(699, 183);
-            this.groupBox3.TabIndex = 17;
+            this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Datos Personales";
             // 
@@ -97,7 +100,7 @@
             this.chbActivo.Location = new System.Drawing.Point(568, 148);
             this.chbActivo.Name = "chbActivo";
             this.chbActivo.Size = new System.Drawing.Size(95, 17);
-            this.chbActivo.TabIndex = 14;
+            this.chbActivo.TabIndex = 6;
             this.chbActivo.Text = "Usuario Activo";
             this.chbActivo.UseVisualStyleBackColor = true;
             // 
@@ -110,7 +113,7 @@
             this.cmbPerfil.Location = new System.Drawing.Point(493, 112);
             this.cmbPerfil.Name = "cmbPerfil";
             this.cmbPerfil.Size = new System.Drawing.Size(170, 21);
-            this.cmbPerfil.TabIndex = 13;
+            this.cmbPerfil.TabIndex = 5;
             // 
             // label13
             // 
@@ -126,7 +129,7 @@
             this.txtContraseña.Location = new System.Drawing.Point(484, 69);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(179, 20);
-            this.txtContraseña.TabIndex = 11;
+            this.txtContraseña.TabIndex = 4;
             // 
             // label12
             // 
@@ -142,7 +145,7 @@
             this.txtUsuario.Location = new System.Drawing.Point(484, 21);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(179, 20);
-            this.txtUsuario.TabIndex = 9;
+            this.txtUsuario.TabIndex = 3;
             // 
             // label11
             // 
@@ -158,21 +161,21 @@
             this.txtNombre.Location = new System.Drawing.Point(130, 21);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(187, 20);
-            this.txtNombre.TabIndex = 5;
+            this.txtNombre.TabIndex = 0;
             // 
             // txtApellido
             // 
             this.txtApellido.Location = new System.Drawing.Point(130, 69);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(187, 20);
-            this.txtApellido.TabIndex = 4;
+            this.txtApellido.TabIndex = 1;
             // 
             // txtDni
             // 
             this.txtDni.Location = new System.Drawing.Point(130, 113);
             this.txtDni.Name = "txtDni";
             this.txtDni.Size = new System.Drawing.Size(187, 20);
-            this.txtDni.TabIndex = 3;
+            this.txtDni.TabIndex = 2;
             // 
             // label3
             // 
@@ -214,7 +217,7 @@
             this.groupBox2.Location = new System.Drawing.Point(491, 307);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(318, 203);
-            this.groupBox2.TabIndex = 16;
+            this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Contacto:";
             // 
@@ -223,7 +226,7 @@
             this.txtUsuarioRedSocial.Location = new System.Drawing.Point(182, 121);
             this.txtUsuarioRedSocial.Name = "txtUsuarioRedSocial";
             this.txtUsuarioRedSocial.Size = new System.Drawing.Size(121, 20);
-            this.txtUsuarioRedSocial.TabIndex = 8;
+            this.txtUsuarioRedSocial.TabIndex = 3;
             // 
             // label14
             // 
@@ -239,7 +242,7 @@
             this.txtTelefono.Location = new System.Drawing.Point(201, 49);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(100, 20);
-            this.txtTelefono.TabIndex = 6;
+            this.txtTelefono.TabIndex = 1;
             // 
             // label8
             // 
@@ -260,7 +263,7 @@
             this.cmbRedSocial.Location = new System.Drawing.Point(180, 84);
             this.cmbRedSocial.Name = "cmbRedSocial";
             this.cmbRedSocial.Size = new System.Drawing.Size(121, 21);
-            this.cmbRedSocial.TabIndex = 3;
+            this.cmbRedSocial.TabIndex = 2;
             // 
             // label9
             // 
@@ -276,7 +279,7 @@
             this.txtMail.Location = new System.Drawing.Point(201, 17);
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(100, 20);
-            this.txtMail.TabIndex = 1;
+            this.txtMail.TabIndex = 0;
             // 
             // label10
             // 
@@ -298,17 +301,42 @@
             this.groupBox1.Location = new System.Drawing.Point(110, 307);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(351, 203);
-            this.groupBox1.TabIndex = 15;
+            this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Domicilio:";
             // 
             // cmbProvincia
             // 
             this.cmbProvincia.FormattingEnabled = true;
+            this.cmbProvincia.Items.AddRange(new object[] {
+            "Buenos Aires",
+            "Catamarca",
+            "Chaco",
+            "Chubut",
+            "Córdoba",
+            "Corrientes",
+            "Entre Ríos",
+            "Formosa",
+            "Jujuy",
+            "La Pampa",
+            "La Rioja",
+            "Mendoza",
+            "Misiones",
+            "Neuquén",
+            "Río Negro",
+            "Salta",
+            "San Juan",
+            "San Luis",
+            "Santa Cruz",
+            "Santa Fe",
+            "Santiago del Estero",
+            "Tierra del Fuego",
+            "Tucumán"});
             this.cmbProvincia.Location = new System.Drawing.Point(130, 66);
             this.cmbProvincia.Name = "cmbProvincia";
             this.cmbProvincia.Size = new System.Drawing.Size(177, 21);
-            this.cmbProvincia.TabIndex = 11;
+            this.cmbProvincia.TabIndex = 1;
+            this.cmbProvincia.SelectedIndexChanged += new System.EventHandler(this.cmbProvincia_SelectedIndexChanged);
             // 
             // cmbLocalidad
             // 
@@ -316,7 +344,7 @@
             this.cmbLocalidad.Location = new System.Drawing.Point(130, 109);
             this.cmbLocalidad.Name = "cmbLocalidad";
             this.cmbLocalidad.Size = new System.Drawing.Size(177, 21);
-            this.cmbLocalidad.TabIndex = 10;
+            this.cmbLocalidad.TabIndex = 2;
             this.cmbLocalidad.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label7
@@ -342,7 +370,7 @@
             this.txtDireccion.Location = new System.Drawing.Point(130, 18);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(177, 20);
-            this.txtDireccion.TabIndex = 7;
+            this.txtDireccion.TabIndex = 0;
             // 
             // label4
             // 
@@ -358,7 +386,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(538, 511);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 19;
+            this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -368,7 +396,7 @@
             this.btnGuardarCambios.Location = new System.Drawing.Point(647, 511);
             this.btnGuardarCambios.Name = "btnGuardarCambios";
             this.btnGuardarCambios.Size = new System.Drawing.Size(119, 23);
-            this.btnGuardarCambios.TabIndex = 18;
+            this.btnGuardarCambios.TabIndex = 4;
             this.btnGuardarCambios.Text = "Guardar Cambios";
             this.btnGuardarCambios.UseVisualStyleBackColor = true;
             this.btnGuardarCambios.Click += new System.EventHandler(this.btnGuardarCambios_Click);
@@ -379,14 +407,14 @@
             this.cmbUsuarios.Location = new System.Drawing.Point(23, 19);
             this.cmbUsuarios.Name = "cmbUsuarios";
             this.cmbUsuarios.Size = new System.Drawing.Size(351, 21);
-            this.cmbUsuarios.TabIndex = 22;
+            this.cmbUsuarios.TabIndex = 0;
             // 
             // btnBuscar
             // 
             this.btnBuscar.Location = new System.Drawing.Point(553, 17);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscar.TabIndex = 23;
+            this.btnBuscar.TabIndex = 1;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
@@ -398,9 +426,13 @@
             this.groupBox4.Location = new System.Drawing.Point(110, 12);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(690, 57);
-            this.groupBox4.TabIndex = 24;
+            this.groupBox4.TabIndex = 0;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Selecione el usuario que desea editar";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // frmEditarUsuario
             // 
@@ -424,6 +456,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -468,5 +501,6 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.CheckBox chbActivo;
         private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
