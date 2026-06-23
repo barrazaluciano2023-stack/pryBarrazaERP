@@ -19,43 +19,90 @@ namespace pryBarrazaERP
             this.AcceptButton = btnAceptar;
         }
         int intentos = 0;
-        
+
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            CConexion conexion = new CConexion();
-            clsAuditoria grabarUsuario = new clsAuditoria();
+            {
+                CConexion conexion = new CConexion();
+                clsAuditoria grabarUsuario = new clsAuditoria();
 
-            if (txtUsuario.Text == "" || txtContraseña.Text == "")
-            {
-                MessageBox.Show("Por favor, complete ambos campos.");
-                txtUsuario.Focus();
-                return;
-            }
-            string perfil = conexion.ObtenerPerfil(txtUsuario.Text, txtContraseña.Text);
-            DateTime fechaYHora = DateTime.Now;
-            grabarUsuario.GrabarDatos(txtUsuario.Text, txtContraseña.Text, fechaYHora.ToString(), intentos.ToString());
-            if (perfil != "")
-            {
-                if (perfil == "admin")
+                if (txtUsuario.Text.Trim() == "" ||
+                    txtContraseña.Text.Trim() == "")
                 {
-                    frmPrincipalADM principal = new frmPrincipalADM(txtUsuario.Text);
-                    principal.Show();
-                }
-                else if (perfil == "Recursos Humanos")
-                {
-                    frmPrincipalRRHH principal = new frmPrincipalRRHH(txtUsuario.Text);
-                    principal.Show();
-                }
-                else if (perfil == "usuario")
-                {
-                    frmPrincipalUsuario principal = new frmPrincipalUsuario(txtUsuario.Text);
-                    principal.Show();
+                    MessageBox.Show(
+                        "Por favor, complete ambos campos.",
+                        "Validación",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+
+                    txtUsuario.Focus();
+                    return;
                 }
 
-                this.Hide();
+                string perfil =
+                    conexion.ObtenerPerfil(
+                        txtUsuario.Text.Trim(),
+                        txtContraseña.Text.Trim());
+
+                DateTime fechaYHora = DateTime.Now;
+
+                if (perfil != "")
+                {
+                    grabarUsuario.GrabarDatos(
+                        txtUsuario.Text,
+                        txtContraseña.Text,
+                        fechaYHora.ToString(),
+                        intentos.ToString());
+
+                    if (perfil == "admin")
+                    {
+                        frmPrincipalADM principal =
+                            new frmPrincipalADM(txtUsuario.Text);
+
+                        principal.Show();
+                    }
+                    else if (perfil == "Recursos Humanos")
+                    {
+                        frmPrincipalRRHH principal =
+                            new frmPrincipalRRHH(txtUsuario.Text);
+
+                        principal.Show();
+                    }
+                    else if (perfil == "usuario")
+                    {
+                        frmPrincipalUsuario principal =
+                            new frmPrincipalUsuario(txtUsuario.Text);
+
+                        principal.Show();
+                    }
+
+                    this.Hide();
+                }
+                else
+                {
+                    intentos++;
+                    if (intentos >= 3)
+                    {
+                        MessageBox.Show(
+                            "Ha superado la cantidad máxima de intentos permitidos.",
+                            "Acceso bloqueado",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Stop);
+
+                        Application.Exit();
+                    }
+
+                    MessageBox.Show(
+                        "Usuario o contraseña incorrectos.",
+                        "Acceso denegado",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+
+                    txtContraseña.Clear();
+                    txtContraseña.Focus();
+                }
             }
         }
-
         
         private void btnCancelar_Click(object sender, EventArgs e)
         {

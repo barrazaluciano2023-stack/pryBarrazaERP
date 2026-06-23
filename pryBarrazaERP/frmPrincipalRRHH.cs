@@ -45,5 +45,11 @@ namespace pryBarrazaERP
             frmEditarUsuario editarUsuario = new frmEditarUsuario(usuario);
             editarUsuario.ShowDialog();
         }
+
+        private void btnInfoExtraUsuario_Click(object sender, EventArgs e)
+        {
+            frmInfoExtra infoExtra = new frmInfoExtra();
+            infoExtra.ShowDialog();
+        }
     }
 }

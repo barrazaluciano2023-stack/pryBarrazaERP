@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipalRRHH));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnInfoExtraUsuario = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnEditUsuario = new System.Windows.Forms.Button();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
@@ -42,6 +44,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.btnInfoExtraUsuario);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.btnEditUsuario);
             this.panel1.Controls.Add(this.btnCerrarSesion);
@@ -50,6 +53,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(238, 448);
             this.panel1.TabIndex = 13;
+            // 
+            // btnInfoExtraUsuario
+            // 
+            this.btnInfoExtraUsuario.Location = new System.Drawing.Point(24, 325);
+            this.btnInfoExtraUsuario.Name = "btnInfoExtraUsuario";
+            this.btnInfoExtraUsuario.Size = new System.Drawing.Size(173, 23);
+            this.btnInfoExtraUsuario.TabIndex = 15;
+            this.btnInfoExtraUsuario.Text = "Agregar Informacion de usuario";
+            this.btnInfoExtraUsuario.UseVisualStyleBackColor = true;
+            this.btnInfoExtraUsuario.Click += new System.EventHandler(this.btnInfoExtraUsuario_Click);
             // 
             // pictureBox1
             // 
@@ -63,7 +76,7 @@
             // 
             // btnEditUsuario
             // 
-            this.btnEditUsuario.Location = new System.Drawing.Point(24, 291);
+            this.btnEditUsuario.Location = new System.Drawing.Point(24, 286);
             this.btnEditUsuario.Name = "btnEditUsuario";
             this.btnEditUsuario.Size = new System.Drawing.Size(173, 23);
             this.btnEditUsuario.TabIndex = 12;
@@ -73,7 +86,7 @@
             // 
             // btnCerrarSesion
             // 
-            this.btnCerrarSesion.Location = new System.Drawing.Point(24, 344);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(24, 405);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Size = new System.Drawing.Size(173, 23);
             this.btnCerrarSesion.TabIndex = 10;
@@ -119,8 +132,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblBienvenido);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPrincipalRRHH";
-            this.Text = "frmPrincipalRRHH";
+            this.Text = "Recursos Humanos";
             this.Load += new System.EventHandler(this.frmPrincipalRRHH_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -138,5 +152,6 @@
         private System.Windows.Forms.Label lblBienvenido;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnInfoExtraUsuario;
     }
 }

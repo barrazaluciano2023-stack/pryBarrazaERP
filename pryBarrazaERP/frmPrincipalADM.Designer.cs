@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipalADM));
             this.lblHora = new System.Windows.Forms.Label();
             this.lblBienvenido = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
@@ -37,8 +38,8 @@
             this.btnVerAuditoria = new System.Windows.Forms.Button();
             this.btnCerrasSesion = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnInfoExtraUsuario = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnEditarPerfilUsuario = new System.Windows.Forms.Button();
             this.btnEditUsuario = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -81,7 +82,7 @@
             // 
             // btmAgregarUsuario
             // 
-            this.btmAgregarUsuario.Location = new System.Drawing.Point(26, 222);
+            this.btmAgregarUsuario.Location = new System.Drawing.Point(26, 233);
             this.btmAgregarUsuario.Name = "btmAgregarUsuario";
             this.btmAgregarUsuario.Size = new System.Drawing.Size(173, 23);
             this.btmAgregarUsuario.TabIndex = 8;
@@ -91,7 +92,7 @@
             // 
             // btnVerAuditoria
             // 
-            this.btnVerAuditoria.Location = new System.Drawing.Point(26, 365);
+            this.btnVerAuditoria.Location = new System.Drawing.Point(26, 370);
             this.btnVerAuditoria.Name = "btnVerAuditoria";
             this.btnVerAuditoria.Size = new System.Drawing.Size(173, 23);
             this.btnVerAuditoria.TabIndex = 11;
@@ -112,8 +113,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.btnInfoExtraUsuario);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.btnEditarPerfilUsuario);
             this.panel1.Controls.Add(this.btnEditUsuario);
             this.panel1.Controls.Add(this.btnCerrasSesion);
             this.panel1.Controls.Add(this.btnVerAuditoria);
@@ -122,6 +123,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(238, 448);
             this.panel1.TabIndex = 11;
+            // 
+            // btnInfoExtraUsuario
+            // 
+            this.btnInfoExtraUsuario.Location = new System.Drawing.Point(26, 325);
+            this.btnInfoExtraUsuario.Name = "btnInfoExtraUsuario";
+            this.btnInfoExtraUsuario.Size = new System.Drawing.Size(173, 23);
+            this.btnInfoExtraUsuario.TabIndex = 14;
+            this.btnInfoExtraUsuario.Text = "Agregar Informacion de usuario";
+            this.btnInfoExtraUsuario.UseVisualStyleBackColor = true;
+            this.btnInfoExtraUsuario.Click += new System.EventHandler(this.btnInfoExtraUsuario_Click);
             // 
             // pictureBox1
             // 
@@ -133,19 +144,9 @@
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
-            // btnEditarPerfilUsuario
-            // 
-            this.btnEditarPerfilUsuario.Location = new System.Drawing.Point(26, 314);
-            this.btnEditarPerfilUsuario.Name = "btnEditarPerfilUsuario";
-            this.btnEditarPerfilUsuario.Size = new System.Drawing.Size(173, 23);
-            this.btnEditarPerfilUsuario.TabIndex = 13;
-            this.btnEditarPerfilUsuario.Text = "Editar Perfil de usuario";
-            this.btnEditarPerfilUsuario.UseVisualStyleBackColor = true;
-            this.btnEditarPerfilUsuario.Click += new System.EventHandler(this.btnEditarPerfilUsuario_Click);
-            // 
             // btnEditUsuario
             // 
-            this.btnEditUsuario.Location = new System.Drawing.Point(26, 266);
+            this.btnEditUsuario.Location = new System.Drawing.Point(26, 281);
             this.btnEditUsuario.Name = "btnEditUsuario";
             this.btnEditUsuario.Size = new System.Drawing.Size(173, 23);
             this.btnEditUsuario.TabIndex = 12;
@@ -173,9 +174,10 @@
             this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.lblBienvenido);
             this.Controls.Add(this.lblHora);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPrincipalADM";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "principal";
+            this.Text = "Administrador";
             this.Load += new System.EventHandler(this.principal_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -194,8 +196,8 @@
         private System.Windows.Forms.Button btnCerrasSesion;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnEditUsuario;
-        private System.Windows.Forms.Button btnEditarPerfilUsuario;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnInfoExtraUsuario;
     }
 }

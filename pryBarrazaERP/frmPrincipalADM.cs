@@ -106,17 +106,6 @@ namespace pryBarrazaERP
             login.ShowDialog();
         }
 
-        private void btnEditarPerfilUsuario_Click(object sender, EventArgs e)
-        {
-            frmEditarPerfilUsuario frmEditarPerfil = new frmEditarPerfilUsuario();
-            clsAuditoria auditoria = new clsAuditoria();
-
-            auditoria.GrabarMovimiento(
-                usuario,
-                "frmEditarUsuario",
-                "Abrió Editar Usuario");
-            frmEditarPerfil.ShowDialog();
-        }
 
         private void btnEditUsuario_Click(object sender, EventArgs e)
         {
@@ -130,6 +119,12 @@ namespace pryBarrazaERP
             frmEditarUsuario frmEditarUsuario = new frmEditarUsuario(usuario);
             frmEditarUsuario.ShowDialog();
             
+        }
+
+        private void btnInfoExtraUsuario_Click(object sender, EventArgs e)
+        {
+            frmInfoExtra infoExtra = new frmInfoExtra();
+            infoExtra.ShowDialog();
         }
     }
 }

@@ -21,52 +21,83 @@ namespace pryBarrazaERP
         private void frmInfoExtra_Load(object sender, EventArgs e)
         {
 
+            CConexion conexion = new CConexion();
+
+            cmbUsuario.DataSource =
+                conexion.ObtenerUsuarios();
+
+            cmbUsuario.DisplayMember = "UsuarioCompleto";
+
+            cmbUsuario.ValueMember = "IdUsuario";
+
+            cmbUsuario.SelectedIndex = -1;
         }
+        
 
         private void btnCargarContacto_Click(object sender, EventArgs e)
         {
-            CConexion conexion = new CConexion();
 
-            int idUsuario =
-                conexion.ObtenerIdUsuarioPorDni(txtDniContacto.Text);
-
-            if (idUsuario == 0)
+            if (cmbUsuario.SelectedIndex == -1)
             {
-                MessageBox.Show("No existe un usuario con ese DNI");
+                MessageBox.Show(
+                    "Seleccione un usuario");
                 return;
             }
+
+            int idUsuario =
+                Convert.ToInt32(cmbUsuario.SelectedValue);
+
+            CConexion conexion = new CConexion();
 
             conexion.registrarContactoExtra(
                 idUsuario,
-                txtMailextra.Text,
-                txtTelefonoExtra.Text,
-                cmbRedSocialextra.Text
-            );
+                txtMail.Text,
+                txtTelefono.Text,
+                cmbRedSocial.Text);
 
-            MessageBox.Show("Contacto Extra registrado");
+            MessageBox.Show(
+                "Contacto registrado correctamente");
+            txtMail.Clear();
+            txtTelefono.Clear();
+            cmbRedSocial.SelectedIndex = -1;
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void btnCargarDireccion_Click(object sender, EventArgs e)
         {
-            CConexion conexion = new CConexion();
-
-            int idUsuario =
-                conexion.ObtenerIdUsuarioPorDni(txtdniDomicilio.Text);
-
-            if (idUsuario == 0)
+            if (cmbUsuario.SelectedIndex == -1)
             {
-                MessageBox.Show("No existe un usuario con ese DNI");
+                MessageBox.Show(
+                    "Seleccione un usuario");
                 return;
             }
 
+            int idUsuario =
+                Convert.ToInt32(cmbUsuario.SelectedValue);
+
+            CConexion conexion = new CConexion();
+
             conexion.registrarDireccion2(
                 idUsuario,
-                txtDireccionExtra.Text,
-                cmbProvinciaExtra.Text,
-                cmbLocalidadExtra.Text
-            );
+                txtDireccion.Text,
+                cmbProvincia.Text,
+                cmbLocalidad.Text);
 
-            MessageBox.Show("Domicilio Extra registrado");
+            MessageBox.Show(
+                "Domicilio registrado correctamente");
+
+            txtDireccion.Clear();
+            cmbProvincia.SelectedIndex = -1;
+            cmbLocalidad.SelectedIndex = -1;
+        }
+
+        private void cmbProvincia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CConexion conexion = new CConexion();
+
+            cmbLocalidad.DataSource =
+                conexion.ObtenerLocalidades(cmbProvincia.Text);
+
+            cmbLocalidad.DisplayMember = "Localidad";
         }
     }
 }

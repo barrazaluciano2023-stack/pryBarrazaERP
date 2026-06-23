@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipalUsuario));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnEditUsuario = new System.Windows.Forms.Button();
+            this.btnEditInformacionPersonal = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.lblBienvenido = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,7 +43,7 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.btnEditUsuario);
+            this.panel1.Controls.Add(this.btnEditInformacionPersonal);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Location = new System.Drawing.Point(1, 0);
             this.panel1.Name = "panel1";
@@ -59,15 +60,15 @@
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
             // 
-            // btnEditUsuario
+            // btnEditInformacionPersonal
             // 
-            this.btnEditUsuario.Location = new System.Drawing.Point(22, 336);
-            this.btnEditUsuario.Name = "btnEditUsuario";
-            this.btnEditUsuario.Size = new System.Drawing.Size(173, 23);
-            this.btnEditUsuario.TabIndex = 12;
-            this.btnEditUsuario.Text = "Editar Informacion Personal";
-            this.btnEditUsuario.UseVisualStyleBackColor = true;
-            this.btnEditUsuario.Click += new System.EventHandler(this.btnEditUsuario_Click);
+            this.btnEditInformacionPersonal.Location = new System.Drawing.Point(22, 283);
+            this.btnEditInformacionPersonal.Name = "btnEditInformacionPersonal";
+            this.btnEditInformacionPersonal.Size = new System.Drawing.Size(173, 23);
+            this.btnEditInformacionPersonal.TabIndex = 12;
+            this.btnEditInformacionPersonal.Text = "Editar Informacion Personal";
+            this.btnEditInformacionPersonal.UseVisualStyleBackColor = true;
+            this.btnEditInformacionPersonal.Click += new System.EventHandler(this.btnEditUsuario_Click);
             // 
             // button1
             // 
@@ -107,8 +108,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblBienvenido);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPrincipalUsuario";
-            this.Text = "frmPrincipalUsuario";
+            this.Text = "Usuario";
+            this.Load += new System.EventHandler(this.frmPrincipalUsuario_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -119,7 +122,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnEditUsuario;
+        private System.Windows.Forms.Button btnEditInformacionPersonal;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblBienvenido;
         private System.Windows.Forms.PictureBox pictureBox1;

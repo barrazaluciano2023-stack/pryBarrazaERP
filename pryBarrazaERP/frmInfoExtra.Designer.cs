@@ -28,32 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInfoExtra));
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtdniDomicilio = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cmbProvinciaExtra = new System.Windows.Forms.ComboBox();
-            this.cmbLocalidadExtra = new System.Windows.Forms.ComboBox();
+            this.btnCargarDireccion = new System.Windows.Forms.Button();
+            this.cmbProvincia = new System.Windows.Forms.ComboBox();
+            this.cmbLocalidad = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtDireccionExtra = new System.Windows.Forms.TextBox();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnCargarContacto = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtDniContacto = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtTelefonoExtra = new System.Windows.Forms.TextBox();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.cmbRedSocialextra = new System.Windows.Forms.ComboBox();
+            this.cmbRedSocial = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtMailextra = new System.Windows.Forms.TextBox();
+            this.txtMail = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.cmbUsuario = new System.Windows.Forms.ComboBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage2
@@ -62,64 +64,82 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(719, 372);
+            this.tabPage2.Size = new System.Drawing.Size(719, 314);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Dirección";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtdniDomicilio);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.cmbProvinciaExtra);
-            this.groupBox1.Controls.Add(this.cmbLocalidadExtra);
+            this.groupBox1.Controls.Add(this.btnCargarDireccion);
+            this.groupBox1.Controls.Add(this.cmbProvincia);
+            this.groupBox1.Controls.Add(this.cmbLocalidad);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.txtDireccionExtra);
+            this.groupBox1.Controls.Add(this.txtDireccion);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Location = new System.Drawing.Point(38, 23);
+            this.groupBox1.Location = new System.Drawing.Point(96, 44);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(675, 321);
+            this.groupBox1.Size = new System.Drawing.Size(483, 249);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Domicilio:";
             // 
-            // txtdniDomicilio
+            // btnCargarDireccion
             // 
-            this.txtdniDomicilio.Location = new System.Drawing.Point(301, 39);
-            this.txtdniDomicilio.Name = "txtdniDomicilio";
-            this.txtdniDomicilio.Size = new System.Drawing.Size(121, 20);
-            this.txtdniDomicilio.TabIndex = 16;
+            this.btnCargarDireccion.Location = new System.Drawing.Point(276, 205);
+            this.btnCargarDireccion.Name = "btnCargarDireccion";
+            this.btnCargarDireccion.Size = new System.Drawing.Size(166, 23);
+            this.btnCargarDireccion.TabIndex = 17;
+            this.btnCargarDireccion.Text = "Cargar Domicilio";
+            this.btnCargarDireccion.UseVisualStyleBackColor = true;
+            this.btnCargarDireccion.Click += new System.EventHandler(this.btnCargarDireccion_Click);
             // 
-            // label2
+            // cmbProvincia
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(192, 46);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 13);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "DNI:";
+            this.cmbProvincia.FormattingEnabled = true;
+            this.cmbProvincia.Items.AddRange(new object[] {
+            "Buenos Aires",
+            "Catamarca",
+            "Chaco",
+            "Chubut",
+            "Córdoba",
+            "Corrientes",
+            "Entre Ríos",
+            "Formosa",
+            "Jujuy",
+            "La Pampa",
+            "La Rioja",
+            "Mendoza",
+            "Misiones",
+            "Neuquén",
+            "Río Negro",
+            "Salta",
+            "San Juan",
+            "San Luis",
+            "Santa Cruz",
+            "Santa Fe",
+            "Santiago del Estero",
+            "Tierra del Fuego",
+            "Tucumán"});
+            this.cmbProvincia.Location = new System.Drawing.Point(285, 111);
+            this.cmbProvincia.Name = "cmbProvincia";
+            this.cmbProvincia.Size = new System.Drawing.Size(157, 21);
+            this.cmbProvincia.TabIndex = 11;
+            this.cmbProvincia.SelectedIndexChanged += new System.EventHandler(this.cmbProvincia_SelectedIndexChanged);
             // 
-            // cmbProvinciaExtra
+            // cmbLocalidad
             // 
-            this.cmbProvinciaExtra.FormattingEnabled = true;
-            this.cmbProvinciaExtra.Location = new System.Drawing.Point(336, 119);
-            this.cmbProvinciaExtra.Name = "cmbProvinciaExtra";
-            this.cmbProvinciaExtra.Size = new System.Drawing.Size(86, 21);
-            this.cmbProvinciaExtra.TabIndex = 11;
-            // 
-            // cmbLocalidadExtra
-            // 
-            this.cmbLocalidadExtra.FormattingEnabled = true;
-            this.cmbLocalidadExtra.Location = new System.Drawing.Point(336, 161);
-            this.cmbLocalidadExtra.Name = "cmbLocalidadExtra";
-            this.cmbLocalidadExtra.Size = new System.Drawing.Size(86, 21);
-            this.cmbLocalidadExtra.TabIndex = 10;
+            this.cmbLocalidad.FormattingEnabled = true;
+            this.cmbLocalidad.Location = new System.Drawing.Point(285, 160);
+            this.cmbLocalidad.Name = "cmbLocalidad";
+            this.cmbLocalidad.Size = new System.Drawing.Size(157, 21);
+            this.cmbLocalidad.TabIndex = 10;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(194, 127);
+            this.label7.Location = new System.Drawing.Point(51, 119);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(54, 13);
             this.label7.TabIndex = 9;
@@ -128,23 +148,23 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(194, 169);
+            this.label6.Location = new System.Drawing.Point(49, 168);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 13);
             this.label6.TabIndex = 9;
             this.label6.Text = "Localidad:";
             // 
-            // txtDireccionExtra
+            // txtDireccion
             // 
-            this.txtDireccionExtra.Location = new System.Drawing.Point(292, 79);
-            this.txtDireccionExtra.Name = "txtDireccionExtra";
-            this.txtDireccionExtra.Size = new System.Drawing.Size(130, 20);
-            this.txtDireccionExtra.TabIndex = 7;
+            this.txtDireccion.Location = new System.Drawing.Point(221, 69);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(221, 20);
+            this.txtDireccion.TabIndex = 7;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(186, 86);
+            this.label4.Location = new System.Drawing.Point(50, 76);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 13);
             this.label4.TabIndex = 7;
@@ -152,54 +172,47 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btnCargarContacto);
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(719, 372);
+            this.tabPage1.Size = new System.Drawing.Size(719, 314);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Contacto";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // btnCargarContacto
+            // 
+            this.btnCargarContacto.Location = new System.Drawing.Point(402, 275);
+            this.btnCargarContacto.Name = "btnCargarContacto";
+            this.btnCargarContacto.Size = new System.Drawing.Size(166, 23);
+            this.btnCargarContacto.TabIndex = 9;
+            this.btnCargarContacto.Text = "Cargar Contacto";
+            this.btnCargarContacto.UseVisualStyleBackColor = true;
+            this.btnCargarContacto.Click += new System.EventHandler(this.btnCargarContacto_Click);
+            // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.txtDniContacto);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.txtTelefonoExtra);
+            this.groupBox2.Controls.Add(this.txtTelefono);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.cmbRedSocialextra);
+            this.groupBox2.Controls.Add(this.cmbRedSocial);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.txtMailextra);
+            this.groupBox2.Controls.Add(this.txtMail);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Location = new System.Drawing.Point(123, 43);
+            this.groupBox2.Location = new System.Drawing.Point(101, 45);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(467, 288);
+            this.groupBox2.Size = new System.Drawing.Size(467, 206);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Contacto:";
+            this.groupBox2.Text = "Contacto";
             // 
-            // txtDniContacto
+            // txtTelefono
             // 
-            this.txtDniContacto.Location = new System.Drawing.Point(196, 19);
-            this.txtDniContacto.Name = "txtDniContacto";
-            this.txtDniContacto.Size = new System.Drawing.Size(197, 20);
-            this.txtDniContacto.TabIndex = 10;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 13);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "DNI:";
-            // 
-            // txtTelefonoExtra
-            // 
-            this.txtTelefonoExtra.Location = new System.Drawing.Point(196, 101);
-            this.txtTelefonoExtra.Name = "txtTelefonoExtra";
-            this.txtTelefonoExtra.Size = new System.Drawing.Size(198, 20);
-            this.txtTelefonoExtra.TabIndex = 6;
+            this.txtTelefono.Location = new System.Drawing.Point(196, 101);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(198, 20);
+            this.txtTelefono.TabIndex = 6;
             // 
             // label8
             // 
@@ -210,17 +223,17 @@
             this.label8.TabIndex = 5;
             this.label8.Text = "Telefono:";
             // 
-            // cmbRedSocialextra
+            // cmbRedSocial
             // 
-            this.cmbRedSocialextra.FormattingEnabled = true;
-            this.cmbRedSocialextra.Items.AddRange(new object[] {
+            this.cmbRedSocial.FormattingEnabled = true;
+            this.cmbRedSocial.Items.AddRange(new object[] {
             "Instagram",
             "Twiter",
             "Facebook"});
-            this.cmbRedSocialextra.Location = new System.Drawing.Point(242, 145);
-            this.cmbRedSocialextra.Name = "cmbRedSocialextra";
-            this.cmbRedSocialextra.Size = new System.Drawing.Size(151, 21);
-            this.cmbRedSocialextra.TabIndex = 3;
+            this.cmbRedSocial.Location = new System.Drawing.Point(242, 145);
+            this.cmbRedSocial.Name = "cmbRedSocial";
+            this.cmbRedSocial.Size = new System.Drawing.Size(151, 21);
+            this.cmbRedSocial.TabIndex = 3;
             // 
             // label9
             // 
@@ -231,12 +244,12 @@
             this.label9.TabIndex = 2;
             this.label9.Text = "Red Social:";
             // 
-            // txtMailextra
+            // txtMail
             // 
-            this.txtMailextra.Location = new System.Drawing.Point(196, 56);
-            this.txtMailextra.Name = "txtMailextra";
-            this.txtMailextra.Size = new System.Drawing.Size(197, 20);
-            this.txtMailextra.TabIndex = 1;
+            this.txtMail.Location = new System.Drawing.Point(196, 56);
+            this.txtMail.Name = "txtMail";
+            this.txtMail.Size = new System.Drawing.Size(197, 20);
+            this.txtMail.TabIndex = 1;
             // 
             // label10
             // 
@@ -251,19 +264,40 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(45, 32);
+            this.tabControl1.Location = new System.Drawing.Point(45, 90);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(727, 398);
+            this.tabControl1.Size = new System.Drawing.Size(727, 340);
             this.tabControl1.TabIndex = 9;
+            // 
+            // cmbUsuario
+            // 
+            this.cmbUsuario.FormattingEnabled = true;
+            this.cmbUsuario.Location = new System.Drawing.Point(38, 36);
+            this.cmbUsuario.Name = "cmbUsuario";
+            this.cmbUsuario.Size = new System.Drawing.Size(539, 21);
+            this.cmbUsuario.TabIndex = 10;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.cmbUsuario);
+            this.groupBox3.Location = new System.Drawing.Point(62, 4);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(635, 80);
+            this.groupBox3.TabIndex = 12;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Seleccione el usuario al que desea cargar información extra";
             // 
             // frmInfoExtra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.tabControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmInfoExtra";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Informacion Extra";
             this.Load += new System.EventHandler(this.frmInfoExtra_Load);
             this.tabPage2.ResumeLayout(false);
@@ -273,6 +307,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.tabControl1.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -281,25 +316,25 @@
 
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtdniDomicilio;
-        private System.Windows.Forms.Label label2;
         //private Microsoft.Web.WebView2.WinForms.WebView2 wbvGeo;
-        private System.Windows.Forms.ComboBox cmbProvinciaExtra;
-        private System.Windows.Forms.ComboBox cmbLocalidadExtra;
+        private System.Windows.Forms.ComboBox cmbProvincia;
+        private System.Windows.Forms.ComboBox cmbLocalidad;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtDireccionExtra;
+        private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox txtDniContacto;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtTelefonoExtra;
+        private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox cmbRedSocialextra;
+        private System.Windows.Forms.ComboBox cmbRedSocial;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtMailextra;
+        private System.Windows.Forms.TextBox txtMail;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.ComboBox cmbUsuario;
+        private System.Windows.Forms.Button btnCargarDireccion;
+        private System.Windows.Forms.Button btnCargarContacto;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }
