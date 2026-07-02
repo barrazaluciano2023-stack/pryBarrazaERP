@@ -12,7 +12,8 @@ namespace pryBarrazaERP
 {
     public partial class frmPrincipalUsuario : Form
     {
-        private string usuarioLogueado;
+        clsAuditoria auditoria = new clsAuditoria();
+        string usuarioLogueado;
         public frmPrincipalUsuario(string usuario)
         {
             InitializeComponent();
@@ -23,22 +24,46 @@ namespace pryBarrazaERP
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
-            MessageBox.Show("Sesion Cerrada con exito");
-            frmLogin login = new frmLogin();
-            login.ShowDialog();
             
+
+            auditoria.GrabarMovimiento(
+                usuarioLogueado,
+                "frmPrincipalUsuario",
+                "Cerró Sesión");
+
+            DialogResult respuesta = MessageBox.Show(
+                "¿Desea Cerrar Sesion?",
+                "Confirmar salida",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (respuesta == DialogResult.Yes)
+            {
+                this.Close();
+                frmLogin login = new frmLogin();
+
+                login.ShowDialog();
+            }
+
         }
 
         private void btnEditUsuario_Click(object sender, EventArgs e)
         {
+            auditoria.GrabarMovimiento(
+                usuarioLogueado,
+                "frmPrincipalUsuario",
+                "Abrio para editar su informacion");
+
             frmActualizarMiPerfil frmActualizarMiPerfil = new frmActualizarMiPerfil(usuarioLogueado);
             frmActualizarMiPerfil.ShowDialog();
         }
 
         private void frmPrincipalUsuario_Load(object sender, EventArgs e)
         {
-
+           auditoria.GrabarMovimiento(
+                usuarioLogueado,
+                "frmPrincipalUsuario",
+                "inicio Sesion");
         }
     }
 }

@@ -17,6 +17,7 @@ namespace pryBarrazaERP
 
         public frmRegistrarUsuario()
         {
+            this.AcceptButton = btnRegistrarUsuario;
             InitializeComponent();
             // TextBox
             txtNombre.TextChanged += Control_TextChanged;
@@ -63,7 +64,7 @@ namespace pryBarrazaERP
         }
         private void frmPersonal_Load(object sender, EventArgs e)
         {
-            
+            this.AcceptButton = btnRegistrarUsuario;
         }
         private void SoloNumeros(object sender, KeyPressEventArgs e)
         {

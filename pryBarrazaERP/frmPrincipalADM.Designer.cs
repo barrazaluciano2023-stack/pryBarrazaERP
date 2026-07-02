@@ -42,6 +42,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnEditUsuario = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnVerInfo = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -92,7 +93,7 @@
             // 
             // btnVerAuditoria
             // 
-            this.btnVerAuditoria.Location = new System.Drawing.Point(26, 370);
+            this.btnVerAuditoria.Location = new System.Drawing.Point(26, 386);
             this.btnVerAuditoria.Name = "btnVerAuditoria";
             this.btnVerAuditoria.Size = new System.Drawing.Size(173, 23);
             this.btnVerAuditoria.TabIndex = 11;
@@ -102,7 +103,7 @@
             // 
             // btnCerrasSesion
             // 
-            this.btnCerrasSesion.Location = new System.Drawing.Point(26, 415);
+            this.btnCerrasSesion.Location = new System.Drawing.Point(26, 422);
             this.btnCerrasSesion.Name = "btnCerrasSesion";
             this.btnCerrasSesion.Size = new System.Drawing.Size(173, 23);
             this.btnCerrasSesion.TabIndex = 10;
@@ -113,6 +114,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.btnVerInfo);
             this.panel1.Controls.Add(this.btnInfoExtraUsuario);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.btnEditUsuario);
@@ -126,7 +128,7 @@
             // 
             // btnInfoExtraUsuario
             // 
-            this.btnInfoExtraUsuario.Location = new System.Drawing.Point(26, 325);
+            this.btnInfoExtraUsuario.Location = new System.Drawing.Point(26, 310);
             this.btnInfoExtraUsuario.Name = "btnInfoExtraUsuario";
             this.btnInfoExtraUsuario.Size = new System.Drawing.Size(173, 23);
             this.btnInfoExtraUsuario.TabIndex = 14;
@@ -146,7 +148,7 @@
             // 
             // btnEditUsuario
             // 
-            this.btnEditUsuario.Location = new System.Drawing.Point(26, 281);
+            this.btnEditUsuario.Location = new System.Drawing.Point(26, 272);
             this.btnEditUsuario.Name = "btnEditUsuario";
             this.btnEditUsuario.Size = new System.Drawing.Size(173, 23);
             this.btnEditUsuario.TabIndex = 12;
@@ -163,6 +165,16 @@
             this.label1.Size = new System.Drawing.Size(139, 22);
             this.label1.TabIndex = 12;
             this.label1.Text = "Administrador";
+            // 
+            // btnVerInfo
+            // 
+            this.btnVerInfo.Location = new System.Drawing.Point(26, 348);
+            this.btnVerInfo.Name = "btnVerInfo";
+            this.btnVerInfo.Size = new System.Drawing.Size(173, 23);
+            this.btnVerInfo.TabIndex = 17;
+            this.btnVerInfo.Text = "Ver Informacion Extra de usuario";
+            this.btnVerInfo.UseVisualStyleBackColor = true;
+            this.btnVerInfo.Click += new System.EventHandler(this.btnVerInfo_Click);
             // 
             // frmPrincipalADM
             // 
@@ -199,5 +211,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnInfoExtraUsuario;
+        private System.Windows.Forms.Button btnVerInfo;
     }
 }

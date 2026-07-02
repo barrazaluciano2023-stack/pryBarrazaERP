@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipalRRHH));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnVerInfo = new System.Windows.Forms.Button();
             this.btnInfoExtraUsuario = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnEditUsuario = new System.Windows.Forms.Button();
@@ -44,6 +45,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.btnVerInfo);
             this.panel1.Controls.Add(this.btnInfoExtraUsuario);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.btnEditUsuario);
@@ -53,6 +55,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(238, 448);
             this.panel1.TabIndex = 13;
+            // 
+            // btnVerInfo
+            // 
+            this.btnVerInfo.Location = new System.Drawing.Point(24, 365);
+            this.btnVerInfo.Name = "btnVerInfo";
+            this.btnVerInfo.Size = new System.Drawing.Size(173, 23);
+            this.btnVerInfo.TabIndex = 16;
+            this.btnVerInfo.Text = "Ver Informacion Extra de usuario";
+            this.btnVerInfo.UseVisualStyleBackColor = true;
+            this.btnVerInfo.Click += new System.EventHandler(this.btnVerInfo_Click);
             // 
             // btnInfoExtraUsuario
             // 
@@ -134,6 +146,7 @@
             this.Controls.Add(this.lblBienvenido);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPrincipalRRHH";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Recursos Humanos";
             this.Load += new System.EventHandler(this.frmPrincipalRRHH_Load);
             this.panel1.ResumeLayout(false);
@@ -153,5 +166,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnInfoExtraUsuario;
+        private System.Windows.Forms.Button btnVerInfo;
     }
 }

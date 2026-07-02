@@ -134,6 +134,7 @@ namespace pryBarrazaERP
         private void frmLogin_Load(object sender, EventArgs e)
         {
             txtContraseña.UseSystemPasswordChar = true;
+
         }
     }
 }

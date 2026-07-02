@@ -12,9 +12,13 @@ namespace pryBarrazaERP
 {
     public partial class frmEditarUsuario : Form
     {
-        public frmEditarUsuario(string usuario)
+        String usuario = "";
+        clsAuditoria auditoria = new clsAuditoria();
+        public frmEditarUsuario(string usuarioCargado)
         {
             InitializeComponent();
+            this.AcceptButton = btnGuardarCambios;
+            usuario = usuarioCargado;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -35,6 +39,13 @@ namespace pryBarrazaERP
 
             cmbUsuarios.ValueMember =
                 "IdUsuario";
+            cmbUsuarios.SelectedIndex = -1;
+
+
+            auditoria.GrabarMovimiento(
+                usuario,
+                "frmEditarUsuario",
+                "Abrio formulario de Editar Usuario");
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -112,6 +123,11 @@ namespace pryBarrazaERP
             
             MessageBox.Show("Datos actualizados correctamente");
             this.Close();
+
+            auditoria.GrabarMovimiento(
+                usuario,
+                "frmEditarUsuario",
+                "Edito el usuario de id:" + idUsuario);
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

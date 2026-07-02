@@ -17,7 +17,7 @@ namespace pryBarrazaERP
         {
             conexion.ConectarBaseDatos();
 
-            string perfilQuery = "SELECT perfil FROM Usuario WHERE Nombre = @usuario AND Contrasena = @contrasena";
+            string perfilQuery = "SELECT perfil FROM Usuario WHERE usuario = @usuario AND Contrasena = @contrasena";
 
             OleDbCommand cmd = new OleDbCommand(perfilQuery, conexion.conectorBaseDatos);
 
@@ -168,7 +168,7 @@ namespace pryBarrazaERP
                 conexion.ConectarBaseDatos();
 
                 string consulta =
-                    "SELECT DISTINCT usuario FROM [Auditoria-Sesion]";
+                    "SELECT usuario FROM Usuario ORDER BY usuario";
 
                 OleDbDataAdapter da =
                     new OleDbDataAdapter(

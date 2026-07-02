@@ -110,6 +110,7 @@
             this.Controls.Add(this.lblBienvenido);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPrincipalUsuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Usuario";
             this.Load += new System.EventHandler(this.frmPrincipalUsuario_Load);
             this.panel1.ResumeLayout(false);

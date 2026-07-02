@@ -14,6 +14,7 @@ namespace pryBarrazaERP
     {
         private string usuarioLogueado;
         private int idUsuario;
+
         public frmActualizarMiPerfil(string usuario)
         {
             InitializeComponent();
@@ -21,11 +22,15 @@ namespace pryBarrazaERP
             txtDni.Enabled = false;
             cmbPerfil.Enabled = false;
             chbActivo.Enabled = false;
+            this.AcceptButton = btnGuardarCambios;
 
         }
 
         private void frmActualizarMiPerfil_Load(object sender, EventArgs e)
         {
+            clsAuditoria auditoria = new clsAuditoria();
+
+
             CConexion conexion = new CConexion();
 
             idUsuario =
@@ -106,9 +111,17 @@ namespace pryBarrazaERP
                 MessageBoxIcon.Information);
 
             Close();
+            clsAuditoria auditoria = new clsAuditoria();
+
+
+
+            auditoria.GrabarMovimiento(
+                usuarioLogueado,
+                "frmActualizarMiPerfil",
+                "Edito su perfil");
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e) 
         {
             this.Close();
         }

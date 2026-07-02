@@ -12,15 +12,18 @@ namespace pryBarrazaERP
 {
     public partial class frmInfoExtra : Form
     {
-        
+        int idUsuario = 0;
         public frmInfoExtra()
         {
             InitializeComponent();
+
+            this.AcceptButton = btnCargarContacto;
+            this.AcceptButton = btnCargarDireccion;
         }
         
         private void frmInfoExtra_Load(object sender, EventArgs e)
-        {
 
+        {
             CConexion conexion = new CConexion();
 
             cmbUsuario.DataSource =
@@ -31,6 +34,7 @@ namespace pryBarrazaERP
             cmbUsuario.ValueMember = "IdUsuario";
 
             cmbUsuario.SelectedIndex = -1;
+            cmbLocalidad.SelectedIndex = -1;
         }
         
 
@@ -44,7 +48,7 @@ namespace pryBarrazaERP
                 return;
             }
 
-            int idUsuario =
+            idUsuario =
                 Convert.ToInt32(cmbUsuario.SelectedValue);
 
             CConexion conexion = new CConexion();
@@ -53,13 +57,16 @@ namespace pryBarrazaERP
                 idUsuario,
                 txtMail.Text,
                 txtTelefono.Text,
-                cmbRedSocial.Text);
+                cmbRedSocial.Text,
+                txtUsuarioRedSocial.Text);
 
             MessageBox.Show(
                 "Contacto registrado correctamente");
             txtMail.Clear();
             txtTelefono.Clear();
+            txtUsuarioRedSocial.Clear();
             cmbRedSocial.SelectedIndex = -1;
+
         }
 
         private void btnCargarDireccion_Click(object sender, EventArgs e)
@@ -81,13 +88,14 @@ namespace pryBarrazaERP
                 txtDireccion.Text,
                 cmbProvincia.Text,
                 cmbLocalidad.Text);
+            txtDireccion.Clear();
+            cmbProvincia.SelectedIndex = -1;
+            cmbLocalidad.SelectedIndex = -1;
+
 
             MessageBox.Show(
                 "Domicilio registrado correctamente");
 
-            txtDireccion.Clear();
-            cmbProvincia.SelectedIndex = -1;
-            cmbLocalidad.SelectedIndex = -1;
         }
 
         private void cmbProvincia_SelectedIndexChanged(object sender, EventArgs e)
@@ -98,6 +106,11 @@ namespace pryBarrazaERP
                 conexion.ObtenerLocalidades(cmbProvincia.Text);
 
             cmbLocalidad.DisplayMember = "Localidad";
+        }
+
+        private void cmbUsuario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

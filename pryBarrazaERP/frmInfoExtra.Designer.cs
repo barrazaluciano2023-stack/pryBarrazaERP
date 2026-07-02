@@ -41,6 +41,8 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnCargarContacto = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtUsuarioRedSocial = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.cmbRedSocial = new System.Windows.Forms.ComboBox();
@@ -66,7 +68,7 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(719, 314);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Dirección";
+            this.tabPage2.Text = "Domicilio";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // groupBox1
@@ -81,7 +83,7 @@
             this.groupBox1.Location = new System.Drawing.Point(96, 44);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(483, 249);
-            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Domicilio:";
             // 
@@ -90,7 +92,7 @@
             this.btnCargarDireccion.Location = new System.Drawing.Point(276, 205);
             this.btnCargarDireccion.Name = "btnCargarDireccion";
             this.btnCargarDireccion.Size = new System.Drawing.Size(166, 23);
-            this.btnCargarDireccion.TabIndex = 17;
+            this.btnCargarDireccion.TabIndex = 4;
             this.btnCargarDireccion.Text = "Cargar Domicilio";
             this.btnCargarDireccion.UseVisualStyleBackColor = true;
             this.btnCargarDireccion.Click += new System.EventHandler(this.btnCargarDireccion_Click);
@@ -125,7 +127,7 @@
             this.cmbProvincia.Location = new System.Drawing.Point(285, 111);
             this.cmbProvincia.Name = "cmbProvincia";
             this.cmbProvincia.Size = new System.Drawing.Size(157, 21);
-            this.cmbProvincia.TabIndex = 11;
+            this.cmbProvincia.TabIndex = 2;
             this.cmbProvincia.SelectedIndexChanged += new System.EventHandler(this.cmbProvincia_SelectedIndexChanged);
             // 
             // cmbLocalidad
@@ -134,7 +136,7 @@
             this.cmbLocalidad.Location = new System.Drawing.Point(285, 160);
             this.cmbLocalidad.Name = "cmbLocalidad";
             this.cmbLocalidad.Size = new System.Drawing.Size(157, 21);
-            this.cmbLocalidad.TabIndex = 10;
+            this.cmbLocalidad.TabIndex = 3;
             // 
             // label7
             // 
@@ -159,7 +161,7 @@
             this.txtDireccion.Location = new System.Drawing.Point(221, 69);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(221, 20);
-            this.txtDireccion.TabIndex = 7;
+            this.txtDireccion.TabIndex = 1;
             // 
             // label4
             // 
@@ -187,13 +189,15 @@
             this.btnCargarContacto.Location = new System.Drawing.Point(402, 275);
             this.btnCargarContacto.Name = "btnCargarContacto";
             this.btnCargarContacto.Size = new System.Drawing.Size(166, 23);
-            this.btnCargarContacto.TabIndex = 9;
+            this.btnCargarContacto.TabIndex = 1;
             this.btnCargarContacto.Text = "Cargar Contacto";
             this.btnCargarContacto.UseVisualStyleBackColor = true;
             this.btnCargarContacto.Click += new System.EventHandler(this.btnCargarContacto_Click);
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtUsuarioRedSocial);
+            this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.txtTelefono);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.cmbRedSocial);
@@ -203,21 +207,37 @@
             this.groupBox2.Location = new System.Drawing.Point(101, 45);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(467, 206);
-            this.groupBox2.TabIndex = 8;
+            this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Contacto";
             // 
+            // txtUsuarioRedSocial
+            // 
+            this.txtUsuarioRedSocial.Location = new System.Drawing.Point(201, 113);
+            this.txtUsuarioRedSocial.Name = "txtUsuarioRedSocial";
+            this.txtUsuarioRedSocial.Size = new System.Drawing.Size(198, 20);
+            this.txtUsuarioRedSocial.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(26, 113);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(94, 13);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Usuario red social:";
+            // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(196, 101);
+            this.txtTelefono.Location = new System.Drawing.Point(202, 71);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(198, 20);
-            this.txtTelefono.TabIndex = 6;
+            this.txtTelefono.TabIndex = 2;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(21, 101);
+            this.label8.Location = new System.Drawing.Point(27, 71);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(52, 13);
             this.label8.TabIndex = 5;
@@ -230,15 +250,15 @@
             "Instagram",
             "Twiter",
             "Facebook"});
-            this.cmbRedSocial.Location = new System.Drawing.Point(242, 145);
+            this.cmbRedSocial.Location = new System.Drawing.Point(248, 150);
             this.cmbRedSocial.Name = "cmbRedSocial";
             this.cmbRedSocial.Size = new System.Drawing.Size(151, 21);
-            this.cmbRedSocial.TabIndex = 3;
+            this.cmbRedSocial.TabIndex = 4;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(21, 145);
+            this.label9.Location = new System.Drawing.Point(27, 150);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(62, 13);
             this.label9.TabIndex = 2;
@@ -246,7 +266,7 @@
             // 
             // txtMail
             // 
-            this.txtMail.Location = new System.Drawing.Point(196, 56);
+            this.txtMail.Location = new System.Drawing.Point(202, 26);
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(197, 20);
             this.txtMail.TabIndex = 1;
@@ -254,7 +274,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(21, 63);
+            this.label10.Location = new System.Drawing.Point(27, 33);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(29, 13);
             this.label10.TabIndex = 0;
@@ -268,7 +288,7 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(727, 340);
-            this.tabControl1.TabIndex = 9;
+            this.tabControl1.TabIndex = 1;
             // 
             // cmbUsuario
             // 
@@ -276,7 +296,8 @@
             this.cmbUsuario.Location = new System.Drawing.Point(38, 36);
             this.cmbUsuario.Name = "cmbUsuario";
             this.cmbUsuario.Size = new System.Drawing.Size(539, 21);
-            this.cmbUsuario.TabIndex = 10;
+            this.cmbUsuario.TabIndex = 0;
+            this.cmbUsuario.SelectedIndexChanged += new System.EventHandler(this.cmbUsuario_SelectedIndexChanged);
             // 
             // groupBox3
             // 
@@ -284,7 +305,7 @@
             this.groupBox3.Location = new System.Drawing.Point(62, 4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(635, 80);
-            this.groupBox3.TabIndex = 12;
+            this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Seleccione el usuario al que desea cargar información extra";
             // 
@@ -336,5 +357,7 @@
         private System.Windows.Forms.Button btnCargarDireccion;
         private System.Windows.Forms.Button btnCargarContacto;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TextBox txtUsuarioRedSocial;
+        private System.Windows.Forms.Label label1;
     }
 }

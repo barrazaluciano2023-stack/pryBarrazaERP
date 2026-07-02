@@ -14,11 +14,13 @@ namespace pryBarrazaERP
     public partial class frmPrincipalADM : Form
     {
         string usuario;
+        clsAuditoria auditoria = new clsAuditoria();
         public frmPrincipalADM(string nombreUsuario)
         {
             InitializeComponent();
             usuario = nombreUsuario;
             lblBienvenido.Text = "Bienvenido:  " + usuario;
+
         }
 
         private void btnProbar_Click(object sender, EventArgs e)
@@ -30,12 +32,14 @@ namespace pryBarrazaERP
         private void principal_Load(object sender, EventArgs e)
         {
             lblFecha.Text = DateTime.Now.ToLongDateString();
-            clsAuditoria auditoria = new clsAuditoria();
+            
 
             auditoria.GrabarMovimiento(
                 usuario,
                 "frmPrincipalADM",
                 "Ingreso al sistema");
+
+
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -55,7 +59,7 @@ namespace pryBarrazaERP
 
         private void btmAgregarUsuario_Click(object sender, EventArgs e)
         {
-            clsAuditoria auditoria = new clsAuditoria();
+            
 
             auditoria.GrabarMovimiento(
                 usuario,
@@ -95,15 +99,30 @@ namespace pryBarrazaERP
                 "frmPrincipalADM",
                 "Cerró Sesión");
 
-            this.Close();
+            DialogResult respuesta = MessageBox.Show(
+               "¿Desea Cerrar Sesion?",
+               "Confirmar salida",
+               MessageBoxButtons.YesNo,
+               MessageBoxIcon.Question);
 
-            MessageBox.Show(
-                "Sesion Cerrada con exito");
+            if (respuesta == DialogResult.Yes)
+            {
+                this.Close();
+                frmLogin login = new frmLogin();
 
-            frmLogin login =
-                new frmLogin();
+                login.ShowDialog();
+            }
 
-            login.ShowDialog();
+
+
+
+            //MessageBox.Show(
+            //    "Sesion Cerrada con exito");
+
+            //frmLogin login =
+            //    new frmLogin();
+
+            //login.ShowDialog();
         }
 
 
@@ -122,9 +141,25 @@ namespace pryBarrazaERP
         }
 
         private void btnInfoExtraUsuario_Click(object sender, EventArgs e)
+
         {
+            auditoria.GrabarMovimiento(
+              usuario,
+              "frmPrincipalAdm",
+              "Cargo informacion extra de usuario");
             frmInfoExtra infoExtra = new frmInfoExtra();
             infoExtra.ShowDialog();
+        }
+        
+        private void btnVerInfo_Click(object sender, EventArgs e)
+        {
+            auditoria.GrabarMovimiento(
+             usuario,
+             "frmPrincipalAdm",
+             "Vio informacion extra de usuario");
+
+            frmVerInfoExtra verInfoExtra = new frmVerInfoExtra(usuario);
+            verInfoExtra.ShowDialog();
         }
     }
 }

@@ -169,8 +169,8 @@ namespace pryBarrazaERP
             {
                 ConectarBaseDatos();
 
-                string consulta = "SELECT Perfil FROM Usuario WHERE Nombre = ? AND Contrasena = ?";
-                //string consulta = "SELECT Perfil FROM Usuario WHERE usuario = ? AND Contrasena = ?";
+                //string consulta = "SELECT Perfil FROM Usuario WHERE Nombre = ? AND Contrasena = ?";
+                string consulta = "SELECT Perfil FROM Usuario WHERE usuario = ? AND Contrasena = ?";
 
                 OleDbCommand cmd = new OleDbCommand(consulta, conectorBaseDatos);
 
@@ -412,40 +412,7 @@ namespace pryBarrazaERP
 
             return tabla;
         }
-        //public int ObtenerIdUsuarioPorDni(string dni)
-        //{
-        //    int idUsuario = 0;
-
-        //    try
-        //    {
-        //        ConectarBaseDatos();
-
-        //        string consulta =
-        //            "SELECT IdUsuario FROM Usuario WHERE DNI = ?";
-
-        //        OleDbCommand cmd =
-        //            new OleDbCommand(consulta, conectorBaseDatos);
-
-        //        cmd.Parameters.AddWithValue("@DNI", dni);
-
-        //        object resultado = cmd.ExecuteScalar();
-
-        //        if (resultado != null)
-        //        {
-        //            idUsuario = Convert.ToInt32(resultado);
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message);
-        //    }
-        //    finally
-        //    {
-        //        conectorBaseDatos.Close();
-        //    }
-
-        //    return idUsuario;
-        //}
+       
         public DataTable ObtenerUsuarios()
         {
             DataTable tabla = new DataTable();
@@ -454,7 +421,7 @@ namespace pryBarrazaERP
             {
                 ConectarBaseDatos();
 
-                string consulta = @"SELECT IdUsuario,DNI & ' - ' & Nombre & ' ' & Apellido AS UsuarioCompletoFROM Usuario ORDER BY Apellido, Nombre";
+                string consulta = @"SELECT IdUsuario,DNI & '      ' & Nombre & ' ' & Apellido AS UsuarioCompleto FROM Usuario ORDER BY Apellido, Nombre";
 
                 OleDbDataAdapter da = new OleDbDataAdapter(consulta, conectorBaseDatos);
 
@@ -467,7 +434,7 @@ namespace pryBarrazaERP
 
             return tabla;
         }
-        public void registrarContactoExtra(int idUsuario, string mail, string telefono, string redSocial)
+        public void registrarContactoExtra(int idUsuario, string mail, string telefono, string redSocial,string usuarioRedSocial)
         {
             {
                 try
@@ -476,11 +443,11 @@ namespace pryBarrazaERP
 
                     string consulta = @"INSERT INTO contacto
                         (
-                           IdUsuario, mail,telefono,redSocial
+                           IdUsuario, mail,telefono,redSocial,usuarioRedSocial
                         )
                         VALUES
                         (
-                            ?,?,?,?
+                            ?,?,?,?,?
                         )";
 
                     OleDbCommand cmd = new OleDbCommand(consulta, conectorBaseDatos);
@@ -488,6 +455,7 @@ namespace pryBarrazaERP
                     cmd.Parameters.AddWithValue("@mail", mail);
                     cmd.Parameters.AddWithValue("@telefono", telefono);
                     cmd.Parameters.AddWithValue("@redSocial", redSocial);
+                    cmd.Parameters.AddWithValue("@usuarioRedSocial", usuarioRedSocial);
 
                     cmd.ExecuteNonQuery();
                 }
@@ -568,5 +536,69 @@ namespace pryBarrazaERP
 
             return idUsuario;
         }
+        public DataTable ObtenerContactosExtras(int idUsuario)
+        {
+            DataTable tabla = new DataTable();
+
+            try
+            {
+                ConectarBaseDatos();
+
+                string consulta =
+                @"SELECT
+            mail,
+            telefono,
+            redSocial,
+            usuarioRedSocial
+          FROM contacto
+          WHERE IdUsuario = ?";
+
+                OleDbCommand cmd = new OleDbCommand(consulta, conectorBaseDatos);
+
+                cmd.Parameters.AddWithValue("@IdUsuario", idUsuario);
+
+                OleDbDataAdapter da = new OleDbDataAdapter(cmd);
+
+                da.Fill(tabla);
+            }
+            finally
+            {
+                conectorBaseDatos.Close();
+            }
+
+            return tabla;
+        }
+        public DataTable ObtenerDomiciliosExtras(int idUsuario)
+        {
+            DataTable tabla = new DataTable();
+
+            try
+            {
+                ConectarBaseDatos();
+
+                string consulta =
+                @"SELECT
+            direccion,
+            provincia,
+            localidad
+          FROM domicilio
+          WHERE IdUsuario = ?";
+
+                OleDbCommand cmd = new OleDbCommand(consulta, conectorBaseDatos);
+
+                cmd.Parameters.AddWithValue("@IdUsuario", idUsuario);
+
+                OleDbDataAdapter da = new OleDbDataAdapter(cmd);
+
+                da.Fill(tabla);
+            }
+            finally
+            {
+                conectorBaseDatos.Close();
+            }
+
+            return tabla;
+        }
     }
+
 }
