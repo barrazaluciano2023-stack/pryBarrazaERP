@@ -252,7 +252,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(52, 13);
             this.label8.TabIndex = 5;
-            this.label8.Text = "Telefono:";
+            this.label8.Text = "Teléfono:";
             // 
             // cmbRedSocial
             // 

@@ -13,7 +13,7 @@ namespace pryBarrazaERP
     {
         CConexion conexion = new CConexion();
 
-        public  void GrabarDatos(string usuario,string contrasena, string fechaYHora,string intentos)
+        public  void GrabarDatos(string usuario,string contrasena, DateTime fechaYHora,string intentos)
         {
             conexion.ConectarBaseDatos();
 

@@ -37,7 +37,6 @@ namespace pryBarrazaERP
 
             DataTable usuarios = auditoria.ObtenerUsuarios();
 
-            // Agregar opción Todos
             DataRow fila = usuarios.NewRow();
             fila["usuario"] = "Todos";
 
@@ -57,10 +56,40 @@ namespace pryBarrazaERP
 
         }
 
+        private void FiltrarIngresos()
+        {
+            string filtro = "";
+
+            // Usuario
+            if (cmbUsuarioIngresos.Text != "Todos")
+            {
+                filtro = $"usuario = '{cmbUsuarioIngresos.Text}'";
+            }
+
+            // Fechas
+            DateTime desde = dtpDesdeIngresos.Value.Date;
+            DateTime hasta = dtpHastaIngresos.Value.Date.AddDays(1).AddSeconds(-1);
+
+            string fechaDesde =
+                "#" + desde.ToString("MM/dd/yyyy HH:mm:ss") + "#";
+
+            string fechaHasta =
+                "#" + hasta.ToString("MM/dd/yyyy HH:mm:ss") + "#";
+
+            if (filtro != "")
+                filtro += " AND ";
+
+            filtro += $"fechaHora >= {fechaDesde} AND fechaHora <= {fechaHasta}";
+
+            dtIngresos.DefaultView.RowFilter = filtro;
+        }
+
         private void cmbUsuarioIngresos_SelectedIndexChanged(object sender, EventArgs e)
         {
+            FiltrarIngresos();
             if (dtIngresos.Rows.Count > 0)
             {
+
                 if (cmbUsuarioIngresos.Text == "Todos")
                 {
                     dtIngresos.DefaultView.RowFilter = "";
@@ -75,6 +104,7 @@ namespace pryBarrazaERP
 
         private void cmbUsuarioMovimientos_SelectedIndexChanged(object sender, EventArgs e)
         {
+            FiltrarMovimientos();
             if (dtMovimientos.Rows.Count > 0)
             {
                 if (cmbUsuarioMovimientos.Text == "Todos")
@@ -87,6 +117,51 @@ namespace pryBarrazaERP
                         $"Usuario = '{cmbUsuarioMovimientos.Text}'";
                 }
             }
+        }
+
+        private void dtpDesdeIngresos_ValueChanged(object sender, EventArgs e)
+        {
+            FiltrarIngresos();
+        }
+
+        private void dtpHastaIngresos_ValueChanged(object sender, EventArgs e)
+        {
+            FiltrarIngresos();
+        }
+        private void FiltrarMovimientos()
+        {
+            string filtro = "";
+
+            if (cmbUsuarioMovimientos.Text != "Todos")
+            {
+                filtro = $"Usuario = '{cmbUsuarioMovimientos.Text}'";
+            }
+
+            DateTime desde = dtpDesdeMovimientos.Value.Date;
+            DateTime hasta = dtpHastaMovimientos.Value.Date.AddDays(1).AddSeconds(-1);
+
+            string fechaDesde =
+                "#" + desde.ToString("MM/dd/yyyy HH:mm:ss") + "#";
+
+            string fechaHasta =
+                "#" + hasta.ToString("MM/dd/yyyy HH:mm:ss") + "#";
+
+            if (filtro != "")
+                filtro += " AND ";
+
+            filtro += $"FechaHora >= {fechaDesde} AND FechaHora <= {fechaHasta}";
+
+            dtMovimientos.DefaultView.RowFilter = filtro;
+        }
+
+        private void dtpDesdeMovimientos_ValueChanged(object sender, EventArgs e)
+        {
+            FiltrarMovimientos();
+        }
+
+        private void dtpHastaMovimientos_ValueChanged(object sender, EventArgs e)
+        {
+            FiltrarMovimientos();
         }
     }
 }

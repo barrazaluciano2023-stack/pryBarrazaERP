@@ -51,7 +51,7 @@
             this.groupBox1.Size = new System.Drawing.Size(336, 200);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Iniciar Sesion";
+            this.groupBox1.Text = "Iniciar Sesión";
             // 
             // chbVerContraseña
             // 
@@ -148,7 +148,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Login";
+            this.Text = "Iniciar Sesión";
             this.Load += new System.EventHandler(this.frmLogin_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

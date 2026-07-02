@@ -38,11 +38,11 @@
             this.btnVerAuditoria = new System.Windows.Forms.Button();
             this.btnCerrasSesion = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnVerInfo = new System.Windows.Forms.Button();
             this.btnInfoExtraUsuario = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnEditUsuario = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnVerInfo = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -85,7 +85,7 @@
             // 
             this.btmAgregarUsuario.Location = new System.Drawing.Point(26, 233);
             this.btmAgregarUsuario.Name = "btmAgregarUsuario";
-            this.btmAgregarUsuario.Size = new System.Drawing.Size(173, 23);
+            this.btmAgregarUsuario.Size = new System.Drawing.Size(189, 23);
             this.btmAgregarUsuario.TabIndex = 8;
             this.btmAgregarUsuario.Text = "Agregar Usuario";
             this.btmAgregarUsuario.UseVisualStyleBackColor = true;
@@ -95,7 +95,7 @@
             // 
             this.btnVerAuditoria.Location = new System.Drawing.Point(26, 386);
             this.btnVerAuditoria.Name = "btnVerAuditoria";
-            this.btnVerAuditoria.Size = new System.Drawing.Size(173, 23);
+            this.btnVerAuditoria.Size = new System.Drawing.Size(189, 23);
             this.btnVerAuditoria.TabIndex = 11;
             this.btnVerAuditoria.Text = "Ver Tabla Auditoria";
             this.btnVerAuditoria.UseVisualStyleBackColor = true;
@@ -105,7 +105,7 @@
             // 
             this.btnCerrasSesion.Location = new System.Drawing.Point(26, 422);
             this.btnCerrasSesion.Name = "btnCerrasSesion";
-            this.btnCerrasSesion.Size = new System.Drawing.Size(173, 23);
+            this.btnCerrasSesion.Size = new System.Drawing.Size(189, 23);
             this.btnCerrasSesion.TabIndex = 10;
             this.btnCerrasSesion.Text = "Cerrar Sesión";
             this.btnCerrasSesion.UseVisualStyleBackColor = true;
@@ -126,13 +126,23 @@
             this.panel1.Size = new System.Drawing.Size(238, 448);
             this.panel1.TabIndex = 11;
             // 
+            // btnVerInfo
+            // 
+            this.btnVerInfo.Location = new System.Drawing.Point(26, 348);
+            this.btnVerInfo.Name = "btnVerInfo";
+            this.btnVerInfo.Size = new System.Drawing.Size(189, 23);
+            this.btnVerInfo.TabIndex = 17;
+            this.btnVerInfo.Text = "Ver Informacion Extra de usuario";
+            this.btnVerInfo.UseVisualStyleBackColor = true;
+            this.btnVerInfo.Click += new System.EventHandler(this.btnVerInfo_Click);
+            // 
             // btnInfoExtraUsuario
             // 
             this.btnInfoExtraUsuario.Location = new System.Drawing.Point(26, 310);
             this.btnInfoExtraUsuario.Name = "btnInfoExtraUsuario";
-            this.btnInfoExtraUsuario.Size = new System.Drawing.Size(173, 23);
+            this.btnInfoExtraUsuario.Size = new System.Drawing.Size(189, 23);
             this.btnInfoExtraUsuario.TabIndex = 14;
-            this.btnInfoExtraUsuario.Text = "Agregar Informacion de usuario";
+            this.btnInfoExtraUsuario.Text = "Agregar Información extra de usuario";
             this.btnInfoExtraUsuario.UseVisualStyleBackColor = true;
             this.btnInfoExtraUsuario.Click += new System.EventHandler(this.btnInfoExtraUsuario_Click);
             // 
@@ -150,7 +160,7 @@
             // 
             this.btnEditUsuario.Location = new System.Drawing.Point(26, 272);
             this.btnEditUsuario.Name = "btnEditUsuario";
-            this.btnEditUsuario.Size = new System.Drawing.Size(173, 23);
+            this.btnEditUsuario.Size = new System.Drawing.Size(189, 23);
             this.btnEditUsuario.TabIndex = 12;
             this.btnEditUsuario.Text = "Editar Usuario";
             this.btnEditUsuario.UseVisualStyleBackColor = true;
@@ -165,16 +175,6 @@
             this.label1.Size = new System.Drawing.Size(139, 22);
             this.label1.TabIndex = 12;
             this.label1.Text = "Administrador";
-            // 
-            // btnVerInfo
-            // 
-            this.btnVerInfo.Location = new System.Drawing.Point(26, 348);
-            this.btnVerInfo.Name = "btnVerInfo";
-            this.btnVerInfo.Size = new System.Drawing.Size(173, 23);
-            this.btnVerInfo.TabIndex = 17;
-            this.btnVerInfo.Text = "Ver Informacion Extra de usuario";
-            this.btnVerInfo.UseVisualStyleBackColor = true;
-            this.btnVerInfo.Click += new System.EventHandler(this.btnVerInfo_Click);
             // 
             // frmPrincipalADM
             // 

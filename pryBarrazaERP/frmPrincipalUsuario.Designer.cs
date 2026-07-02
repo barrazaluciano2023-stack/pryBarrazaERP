@@ -66,7 +66,7 @@
             this.btnEditInformacionPersonal.Name = "btnEditInformacionPersonal";
             this.btnEditInformacionPersonal.Size = new System.Drawing.Size(173, 23);
             this.btnEditInformacionPersonal.TabIndex = 12;
-            this.btnEditInformacionPersonal.Text = "Editar Informacion Personal";
+            this.btnEditInformacionPersonal.Text = "Editar Información Personal";
             this.btnEditInformacionPersonal.UseVisualStyleBackColor = true;
             this.btnEditInformacionPersonal.Click += new System.EventHandler(this.btnEditUsuario_Click);
             // 

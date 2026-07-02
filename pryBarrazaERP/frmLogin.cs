@@ -51,7 +51,7 @@ namespace pryBarrazaERP
                     grabarUsuario.GrabarDatos(
                         txtUsuario.Text,
                         txtContraseña.Text,
-                        fechaYHora.ToString(),
+                        fechaYHora,
                         intentos.ToString());
 
                     if (perfil == "admin")

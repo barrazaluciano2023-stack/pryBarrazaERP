@@ -60,9 +60,9 @@
             // 
             this.btnVerInfo.Location = new System.Drawing.Point(24, 365);
             this.btnVerInfo.Name = "btnVerInfo";
-            this.btnVerInfo.Size = new System.Drawing.Size(173, 23);
+            this.btnVerInfo.Size = new System.Drawing.Size(191, 23);
             this.btnVerInfo.TabIndex = 16;
-            this.btnVerInfo.Text = "Ver Informacion Extra de usuario";
+            this.btnVerInfo.Text = "Ver Información Extra de usuario";
             this.btnVerInfo.UseVisualStyleBackColor = true;
             this.btnVerInfo.Click += new System.EventHandler(this.btnVerInfo_Click);
             // 
@@ -70,9 +70,9 @@
             // 
             this.btnInfoExtraUsuario.Location = new System.Drawing.Point(24, 325);
             this.btnInfoExtraUsuario.Name = "btnInfoExtraUsuario";
-            this.btnInfoExtraUsuario.Size = new System.Drawing.Size(173, 23);
+            this.btnInfoExtraUsuario.Size = new System.Drawing.Size(191, 23);
             this.btnInfoExtraUsuario.TabIndex = 15;
-            this.btnInfoExtraUsuario.Text = "Agregar Informacion de usuario";
+            this.btnInfoExtraUsuario.Text = "Agregar Información extra de usuario";
             this.btnInfoExtraUsuario.UseVisualStyleBackColor = true;
             this.btnInfoExtraUsuario.Click += new System.EventHandler(this.btnInfoExtraUsuario_Click);
             // 
@@ -90,7 +90,7 @@
             // 
             this.btnEditUsuario.Location = new System.Drawing.Point(24, 286);
             this.btnEditUsuario.Name = "btnEditUsuario";
-            this.btnEditUsuario.Size = new System.Drawing.Size(173, 23);
+            this.btnEditUsuario.Size = new System.Drawing.Size(191, 23);
             this.btnEditUsuario.TabIndex = 12;
             this.btnEditUsuario.Text = "Editar Usuario";
             this.btnEditUsuario.UseVisualStyleBackColor = true;
@@ -100,7 +100,7 @@
             // 
             this.btnCerrarSesion.Location = new System.Drawing.Point(24, 405);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(173, 23);
+            this.btnCerrarSesion.Size = new System.Drawing.Size(191, 23);
             this.btnCerrarSesion.TabIndex = 10;
             this.btnCerrarSesion.Text = "Cerrar Sesión";
             this.btnCerrarSesion.UseVisualStyleBackColor = true;
@@ -110,7 +110,7 @@
             // 
             this.btmAgregarUsuario.Location = new System.Drawing.Point(24, 243);
             this.btmAgregarUsuario.Name = "btmAgregarUsuario";
-            this.btmAgregarUsuario.Size = new System.Drawing.Size(173, 23);
+            this.btmAgregarUsuario.Size = new System.Drawing.Size(191, 23);
             this.btmAgregarUsuario.TabIndex = 8;
             this.btmAgregarUsuario.Text = "Agregar Usuario";
             this.btmAgregarUsuario.UseVisualStyleBackColor = true;
